@@ -4,6 +4,8 @@ Blueprint Construction Suite.
 
 Project management application used to manage construction sites and builds
 
+Backend repo: [blueprint-api](https://github.com/bronsonchaker/blueprint-api)
+
 ## Tech Stack
 
 Framework: React
