@@ -14,3 +14,11 @@
 * {
   font-family: "JetBrains Mono", monospace;
 }
+
+.selected {
+  color: #1a365d;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-decoration-color: #1a365d;
+  text-underline-offset: 5px;
+}

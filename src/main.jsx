@@ -11,10 +11,12 @@ import Jobs from "./pages/Jobs.jsx";
 import Inpsections from "./pages/Inspections.jsx";
 import Reports from "./pages/Reports.jsx";
 import Vendors from "./pages/Vendors.jsx";
+import Navbar from "./components/Navbar.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
+      <Navbar />
       <Routes>
         <Route index path="/" element={<App />} />
         <Route path="/dashboard" element={<Dashboard />} />
