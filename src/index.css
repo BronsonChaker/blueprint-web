@@ -11,9 +11,9 @@
   --font-body: "Inter", sans-serif;
 }
 
-* {
+/* * {
   font-family: "JetBrains Mono", monospace;
-}
+} */
 
 .selected {
   color: #1a365d;
