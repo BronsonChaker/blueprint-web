@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import { FaArrowRight } from "react-icons/fa";
 
 export default function Login() {
   return (
@@ -67,9 +68,9 @@ export default function Login() {
 
           <button
             type="submit"
-            className="flex justify-center items-center bg-primary w-full py-4 rounded-md text-white cursor-pointer mt-5 gap-2 font-semibold text-xl"
+            className="flex justify-center items-center bg-primary w-full py-4 rounded-md text-white cursor-pointer mt-5 gap-2 font-semibold text-xl hover:opacity-85 hover:cursor-pointer hover:duration-200"
           >
-            Sign In <span class="material-symbols-outlined">arrow_forward</span>
+            Sign In <FaArrowRight />
           </button>
         </form>
 

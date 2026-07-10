@@ -7,9 +7,10 @@
   --color-secondary: #4a5568;
   --color-tertiary: #f6ad55;
   --color-neutral: #f7fafc;
+  --color-subtext: #696969;
 
-  --font-heading: "Google Sans Flex", sans-serif;
-  --font-body: "Google Sans Flex", sans-serif;
+  --font-heading: "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
 }
 
 /* * {
@@ -17,5 +18,5 @@
 } */
 
 .selected * {
-  color: #1a365d;
+  background-color: #eff0f086;
 }
