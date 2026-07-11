@@ -1,7 +1,27 @@
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
+import { useEffect, useState } from "react";
+import { useAuth } from "../context/AuthContext";
 import { FaArrowRight } from "react-icons/fa";
 
 export default function Login() {
+  const navigate = useNavigate();
+  const { login } = useAuth();
+  const [error, setError] = useState(null);
+
+  const [credentials, setCredentials] = useState({
+    username: "",
+    password: "",
+  });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await login(credentials);
+      navigate("/dashboard");
+    } catch (err) {
+      setError(err.response?.data?.detail || "Login Failed");
+    }
+  };
   return (
     <div className="flex w-screen h-screen">
       <title>Login</title>
@@ -23,16 +43,22 @@ export default function Login() {
           </p>
         </div>
 
-        <form action="" className="w-full flex flex-col mt-5 gap-4">
+        <form
+          onSubmit={handleSubmit}
+          className="w-full flex flex-col mt-5 gap-4"
+        >
           {/* Email Address Input */}
           <div className="w-full flex flex-col">
             <label htmlFor="" className="font-medium">
-              EMAIL ADDRESS
+              USERNAME
             </label>
             <input
-              type="email"
               className="rounded-sm outline-2 outline-stone-300 px-5 py-3 mt-1 shadow-md"
-              placeholder="e.g johnsmith@gmail.com"
+              placeholder="Username"
+              value={credentials.username}
+              onChange={(e) =>
+                setCredentials({ ...credentials, username: e.target.value })
+              }
             />
           </div>
 
@@ -55,16 +81,22 @@ export default function Login() {
               type="password"
               className="flex rounded-sm outline-2 outline-stone-300 px-5 py-3 mt-1 shadow-md"
               placeholder="**************"
+              value={credentials.password}
+              onChange={(e) =>
+                setCredentials({ ...credentials, password: e.target.value })
+              }
             />
           </div>
 
-          <div className="flex flex-row items-center gap-2 mt-5">
+          {error && <p className="text-red-600 mt-2">{error}</p>}
+
+          {/* <div className="flex flex-row items-center gap-2 mt-5">
             <input
               type="checkbox"
               className="accent-primary h-4 w-4 cursor-pointer"
             />
             <p>Keep me signed in for 30 Days</p>
-          </div>
+          </div> */}
 
           <button
             type="submit"

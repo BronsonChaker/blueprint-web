@@ -12,22 +12,28 @@ import Inpsections from "./pages/Inspections.jsx";
 import Reports from "./pages/Reports.jsx";
 import Vendors from "./pages/Vendors.jsx";
 import Navbar from "./components/Navbar.jsx";
+import { AuthProvider } from "./context/AuthContext.jsx";
+import ProtectedRoute from "./components/ProtectedRoute.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route index path="/" element={<App />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/forgotpassword" element={<ForgotPassword />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/inspections" element={<Inpsections />} />
-        <Route path="/reports" element={<Reports />} />
-        <Route path="/vendors" element={<Vendors />} />
-      </Routes>
+      <AuthProvider>
+        <Navbar />
+        <Routes>
+          <Route index path="/" element={<App />} />
+          <Route element={<ProtectedRoute />}>
+            <Route path="/dashboard" element={<Dashboard />} />
+          </Route>
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/forgotpassword" element={<ForgotPassword />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/inspections" element={<Inpsections />} />
+          <Route path="/reports" element={<Reports />} />
+          <Route path="/vendors" element={<Vendors />} />
+        </Routes>
+      </AuthProvider>
     </BrowserRouter>
   </StrictMode>,
 );

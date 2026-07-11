@@ -103,7 +103,7 @@ export default function Navbar() {
             <p className="text-sm">Bronson Chaker</p>
             <p className="text-sm">Senior Site Supervisor</p>
           </div>
-          <div classNamew="h-full flex justify-center items-center">
+          <div className="h-full flex justify-center items-center">
             <HiOutlineSelector />
           </div>
         </div>
