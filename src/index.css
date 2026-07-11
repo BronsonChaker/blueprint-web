@@ -6,7 +6,7 @@
   --color-primary: #1a365d;
   --color-secondary: #4a5568;
   --color-tertiary: #f6ad55;
-  --color-neutral: #f7fafc;
+  --color-neutral: #e4e5e586;
   --color-subtext: #696969;
 
   --font-heading: "Inter", sans-serif;
@@ -18,5 +18,5 @@
 } */
 
 .selected * {
-  background-color: #eff0f086;
+  background-color: #e4e5e5;
 }
