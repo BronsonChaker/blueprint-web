@@ -4,9 +4,10 @@ import { GrUserWorker } from "react-icons/gr";
 import { HiOutlineDocumentReport } from "react-icons/hi";
 import { MdDashboard } from "react-icons/md";
 import { LuHouse } from "react-icons/lu";
-import { HiOutlineSelector } from "react-icons/hi";
-
 import { FaMagnifyingGlass } from "react-icons/fa6";
+
+let firstLastName = "Bronson Chaker";
+let jobRole = "Senior Supervisor";
 
 export default function Navbar() {
   return (
@@ -49,15 +50,17 @@ export default function Navbar() {
             <p>Inspections</p>
           </div>
         </NavLink>
+
         <NavLink
           className={({ isActive }) => (isActive ? "selected" : "")}
-          to="/reports"
+          to="/checklist"
         >
-          <div className="flex flex-row gap-1 items-center bold hover:bg-stone-100 rounded-md px-2 py-1 hover:duration-200">
-            <HiOutlineDocumentReport />
-            <p>Reports</p>
+          <div className="flex flex-row gap-1 items-center bol hover:bg-stone-100 rounded-md px-2 py-1 hover:duration-200">
+            <GoChecklist />
+            <p>Checklist</p>
           </div>
         </NavLink>
+
         <NavLink
           className={({ isActive }) => (isActive ? "selected" : "")}
           to="/vendors"
@@ -70,41 +73,32 @@ export default function Navbar() {
 
         <NavLink
           className={({ isActive }) => (isActive ? "selected" : "")}
-          to="/checklist"
+          to="/reports"
         >
-          <div className="flex flex-row gap-1 items-center bol hover:bg-stone-100 rounded-md px-2 py-1 hover:duration-200">
-            <GoChecklist />
-            <p>Checklist</p>
+          <div className="flex flex-row gap-1 items-center bold hover:bg-stone-100 rounded-md px-2 py-1 hover:duration-200">
+            <HiOutlineDocumentReport />
+            <p>Reports</p>
           </div>
         </NavLink>
       </div>
 
-      {/* Search */}
-      {/* <div className="">
-        <form action="">
-          <div className="flex flex-row items-center rounded-sm outline-2 outline-stone-300 gap-2">
-            <IoSearch />
-            <input
-              type="search"
-              className="outline-none [&::-webkit-search-cancel-button]:hidden"
-              placeholder="Search Jobs"
-            />
-          </div>
-        </form>
-      </div> */}
-
       {/* Profile */}
       <div className="flex justify-between hover:cursor-pointer hover:opacity-80">
         <div className="flex flex-row gap-2 px-1 py-1 rounded-md">
-          <div className="flex justify-center">
-            <span className="p-2 bg-blue-300 rounded-md">BC </span>
-          </div>
-          <div className="flex flex-col justify-center">
-            <p className="text-sm">Bronson Chaker</p>
-            <p className="text-sm">Senior Site Supervisor</p>
-          </div>
-          <div className="h-full flex justify-center items-center">
-            <HiOutlineSelector />
+          <div class="flex items-center gap-2">
+            <img
+              src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/team-4.jpg"
+              alt="avatar"
+              class="inline-block object-cover object-center w-11 h-11 rounded-md"
+            />
+            <div>
+              <p class="font-sans antialiased text-base text-current">
+                {firstLastName}
+              </p>
+              <small class="font-sans antialiased text-sm text-stone-600">
+                {jobRole}
+              </small>
+            </div>
           </div>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import { IoCalendarOutline } from "react-icons/io5";
+import { IoMdAddCircle } from "react-icons/io";
 
 export default function Projects() {
   let job_count = 21;
@@ -93,6 +94,12 @@ export default function Projects() {
             <option value="">Finalising</option>
           </select>
         </div>
+
+        <button className="flex flex-row items-center gap-1 text-lg bg-primary text-white px-2 rounded-xl hover:opacity-90 hover:duration-300 hover:cursor-pointer">
+          {" "}
+          <IoMdAddCircle />
+          <p>New Project</p>
+        </button>
       </div>
 
       {/* Project Table Section */}
