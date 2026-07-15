@@ -85,17 +85,17 @@ export default function Navbar() {
       {/* Profile */}
       <div className="flex justify-between hover:cursor-pointer hover:opacity-80">
         <div className="flex flex-row gap-2 px-1 py-1 rounded-md">
-          <div class="flex items-center gap-2">
+          <div className="flex items-center gap-2">
             <img
               src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/team-4.jpg"
               alt="avatar"
-              class="inline-block object-cover object-center w-11 h-11 rounded-md"
+              className="inline-block object-cover object-center w-11 h-11 rounded-md"
             />
             <div>
-              <p class="font-sans antialiased text-base text-current">
+              <p className="font-sans antialiased text-base text-current">
                 {firstLastName}
               </p>
-              <small class="font-sans antialiased text-sm text-stone-600">
+              <small className="font-sans antialiased text-sm text-stone-600">
                 {jobRole}
               </small>
             </div>
