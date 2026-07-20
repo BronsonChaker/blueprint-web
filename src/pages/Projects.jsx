@@ -1,6 +1,6 @@
-import { IoCalendarOutline } from "react-icons/io5";
 import { IoMdAddCircle } from "react-icons/io";
 import { useEffect, useState } from "react";
+import ProjectTable from "../components/projects/ProjectTable";
 
 export default function Projects() {
   let job_count = 21;
@@ -109,106 +109,7 @@ export default function Projects() {
 
       {/* Project Table Section */}
       <div className="w-full mt-4">
-        <table className="w-full text rounded-full" id="projectListTable">
-          <thead className="w-full text-black justify-between">
-            {/* Table Header Columns */}
-            <tr className="w-full bg-neutral">
-              <th
-                scope="col"
-                className="w-[5%] text-start px-5 py-4 text-lg font-normal rounded-l-md"
-              >
-                ID
-              </th>
-
-              <th
-                scope="col"
-                className="w-[30%] text-start px-5 py-4 text-lg font-normal"
-              >
-                Project
-              </th>
-
-              <th
-                scope="col"
-                className="w-[15%] text-start px-5 py-4 text-lg font-normal"
-              >
-                Supervisor
-              </th>
-              <th
-                scope="col"
-                className="w-[15%] text-start px-5 py-4 text-lg font-normal"
-              >
-                Status
-              </th>
-              <th
-                scope="col"
-                className="w-[15%] text-start px-5 py-4 text-lg font-normal"
-              >
-                Stage
-              </th>
-
-              <th
-                scope="col"
-                className="w-[40%] text-start px-5 py-4 text-lg font-normal rounded-r-md"
-              >
-                Estimated Completion
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr className="bg-white border-b border-neutral hover:cursor-pointer hover:bg-neutral hover:duration-200">
-              <td className="p-5 font-semibold text-md text-stone-700 ">
-                1257FA
-              </td>
-              <td className="p-5 font-semibold text-md text-stone-700 ">
-                {address}
-              </td>
-              <td className=" items-center p-5 ">
-                <div className="w-full h-full flex flex-row items-center gap-2">
-                  <span className="p-2 bg-blue-300 rounded-full">BC </span>
-                  <p>{supervisor}</p>
-                </div>
-              </td>
-              <td className="p-5">
-                <span className="bg-green-300 text-sm text-green-800 font-medium py-1.5 px-1.5 rounded-md">
-                  ACTIVE
-                </span>
-              </td>
-              <td className="p-5">Finalising</td>
-              <td className="p-5">
-                <div className="w-full h-full flex flex-row gap-2 items-center text-lg">
-                  <IoCalendarOutline />
-                  <p>Oct 26, 2026</p>
-                </div>
-              </td>
-            </tr>
-            <tr className="bg-white border-b border-neutral hover:cursor-pointer hover:bg-neutral hover:duration-200">
-              <td className="p-5 font-semibold text-md text-stone-700 ">
-                0123BF
-              </td>
-              <td className="p-5 font-semibold text-md text-stone-700 ">
-                2396 Boundary Road, Box Hill, NSW, 2749
-              </td>
-              <td className=" items-center p-5 ">
-                <div className="w-full h-full flex flex-row items-center gap-2">
-                  <span className="p-2 bg-blue-300 rounded-full">BC </span>
-                  <p>{supervisor}</p>
-                </div>
-              </td>
-              <td className="p-5">
-                <span className="bg-amber-300 text-sm text-amber-700 font-medium py-1.5 px-1.5 rounded-md">
-                  ON-HOLD
-                </span>
-              </td>
-              <td className="p-5">Slab</td>
-              <td className="p-5">
-                <div className="w-full h-full flex flex-row gap-2 items-center text-lg">
-                  <IoCalendarOutline />
-                  <p>Dec 15, 2027</p>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <ProjectTable />
       </div>
     </div>
   );
