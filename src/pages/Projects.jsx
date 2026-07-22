@@ -1,32 +1,8 @@
 import { IoMdAddCircle } from "react-icons/io";
-import { useEffect, useState } from "react";
 import ProjectTable from "../components/projects/ProjectTable";
 
 export default function Projects() {
   let job_count = 21;
-  let supervisor = "Bronson Chaker";
-  let address = "123 Proposed Road, Silverdale, NSW, 2749";
-  const baseUrl = import.meta.env.VITE_API_URL;
-  const accessToken = localStorage.getItem("access_token");
-
-  async function getJobs() {
-    const url = `${baseUrl}/jobs/`;
-    try {
-      const response = await fetch(url, {
-        headers: { Authorization: `Bearer ${accessToken}` },
-      });
-      if (!response.ok) {
-        throw new Error(`Response status: ${response.status}`);
-      }
-
-      const result = await response.json();
-      console.log(result);
-    } catch (error) {
-      console.error(error.message);
-    }
-  }
-
-  getJobs();
 
   return (
     <div className="px-20 mt-10 h-screen w-full">

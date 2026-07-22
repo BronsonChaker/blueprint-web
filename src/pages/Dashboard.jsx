@@ -10,8 +10,8 @@ export default function Dashboard() {
           Brief overview off all details regards all currently active projects
         </p>
       </div>
-      <div class="grid grid-cols-3 gap-4 border border-red-100">
-        <div class="...">
+      <div className="grid grid-cols-3 gap-4 border border-red-100">
+        <div className="...">
           <div>Quick Actions</div>
           <div>
             <button className="flex flex-row items-center gap-1 text-lg bg-primary text-white px-2 py-3 rounded-xl hover:opacity-90 hover:duration-300 hover:cursor-pointer">
@@ -23,12 +23,12 @@ export default function Dashboard() {
             <button>+ Daily Report</button>
           </div>
         </div>
-        <div class="...">02</div>
-        <div class="...">03</div>
-        <div class="col-span-2 ...">04</div>
-        <div class="...">05</div>
-        <div class="...">06</div>
-        <div class="col-span-2 ...">07</div>
+        <div className="...">02</div>
+        <div className="...">03</div>
+        <div className="col-span-2 ...">04</div>
+        <div className="...">05</div>
+        <div className="...">06</div>
+        <div className="col-span-2 ...">07</div>
       </div>
     </div>
   );
