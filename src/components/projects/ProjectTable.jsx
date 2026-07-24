@@ -20,19 +20,29 @@ export default function ProjectTable() {
   return (
     <table className="w-full">
       <thead>
-        <tr>
-          <th scope="col">ID</th>
-          <th scope="col">Address</th>
-          <th scope="col">Status</th>
-          <th scope="col">Stage</th>
-          <th scope="col">Supervisor</th>
+        <tr scope="row" className="border-t-2 border-gray-200 text-medium">
+          <th scope="col" className="p-3">
+            Job No.
+          </th>
+          <th scope="col" className="p-3">
+            Address
+          </th>
+          <th scope="col" className="p-3">
+            Status
+          </th>
+          <th scope="col" className="p-3">
+            Stage
+          </th>
+          <th scope="col" className="p-3">
+            Supervisor
+          </th>
         </tr>
       </thead>
       <tbody>
         {jobs.map((job) => (
           <ProjectTableRow
             key={job.id}
-            projectId={job.id}
+            jobNumber={job.job_number}
             address={job.address}
             status={job.status}
             stage={job.stage}

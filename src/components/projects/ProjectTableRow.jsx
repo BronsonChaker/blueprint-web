@@ -1,17 +1,21 @@
+import ProjectStatusBadge from "./ProjectStatusBadge";
+
 export default function ProjectListItem({
-  projectId,
+  jobNumber,
   address,
   status,
   stage,
   supervisor,
 }) {
   return (
-    <tr className="">
+    <tr className="hover:cursor-pointer hover:bg-gray-100 border-t-2 border-b-2 border-gray-200">
       <th scope="row" className="p-5">
-        {projectId}
+        {jobNumber}
       </th>
       <td className="p-5 uppercase">{address}</td>
-      <td className="p-5 uppercase text-center">{status}</td>
+      <td className="p-5 uppercase text-center">
+        <ProjectStatusBadge status={status} />
+      </td>
       <td className="p-5 uppercase text-center">{stage}</td>
       <td className="p-5 text-center">{supervisor}</td>
     </tr>
