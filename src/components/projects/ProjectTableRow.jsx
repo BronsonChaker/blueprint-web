@@ -11,7 +11,7 @@ export default function ProjectListItem({
   return (
     <tr
       onClick={onSelect}
-      className="hover:cursor-pointer hover:bg-gray-100 border-t-2 border-b-2 border-gray-200"
+      className="hover:cursor-pointer hover:bg-gray-100 border-t-2 border-b-2 border-border"
     >
       <th scope="row" className="p-5">
         {jobNumber}

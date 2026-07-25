@@ -6,9 +6,9 @@
   --color-primary: #1a365d;
   --color-secondary: #4a5568;
   --color-tertiary: #f6ad55;
-  --color-neutral: #e4e5e586;
+  --color-neutral: #f7fafc;
   --color-subtext: #696969;
-
+  --color-border: #eef1f3;
   --font-heading: "Inter", sans-serif;
   --font-body: "Inter", sans-serif;
 }

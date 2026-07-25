@@ -26,7 +26,7 @@ export default function ProjectTable() {
   return (
     <table className="w-full">
       <thead>
-        <tr scope="row" className="border-t-2 border-gray-200 text-medium">
+        <tr scope="row" className="border-t-2 border-border text-medium">
           <th scope="col" className="p-3">
             Job No.
           </th>

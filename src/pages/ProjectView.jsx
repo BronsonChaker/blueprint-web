@@ -1,6 +1,8 @@
 import { viewProject } from "../api/endpoints/projects";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import ProjectHeader from "../components/projects/ProjectHeader";
+import ProjectContainer from "../components/projects/ProjectContainer";
 
 export default function ProjectView() {
   const [job, setJob] = useState(null);
@@ -23,9 +25,9 @@ export default function ProjectView() {
   if (!job) return <p>No job found.</p>;
 
   return (
-    <div>
-      <h1>{job.address}</h1>
-      <h1>{job.job_number}</h1>
+    <div className="px-20 h-screen">
+      <ProjectHeader address={job.address} jobNumber={job.job_number} />
+      <ProjectContainer />
     </div>
   );
 }
