@@ -14,6 +14,7 @@ import Vendors from "./pages/Vendors.jsx";
 import Navbar from "./components/Navbar.jsx";
 import { AuthProvider } from "./context/AuthContext.jsx";
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
+import ProjectView from "./pages/ProjectView.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -32,6 +33,7 @@ createRoot(document.getElementById("root")).render(
           <Route path="/inspections" element={<Inpsections />} />
           <Route path="/reports" element={<Reports />} />
           <Route path="/vendors" element={<Vendors />} />
+          <Route path="/jobs/:id" element={<ProjectView />} />
         </Routes>
       </AuthProvider>
     </BrowserRouter>

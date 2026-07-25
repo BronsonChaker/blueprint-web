@@ -5,11 +5,15 @@ import { HiOutlineDocumentReport } from "react-icons/hi";
 import { MdDashboard } from "react-icons/md";
 import { LuHouse } from "react-icons/lu";
 import { FaMagnifyingGlass } from "react-icons/fa6";
+import { useAuth } from "../context/AuthContext";
 
-let firstLastName = "Bronson Chaker";
+let firstLastName = "Bronson";
 let jobRole = "Senior Supervisor";
 
 export default function Navbar() {
+  const { user, loading, logout } = useAuth();
+
+  if (loading) return null;
   return (
     <nav className="h-20 w-full text-md py-5 px-20 flex flex-row items-center justify-between">
       {/* Logo */}
@@ -93,7 +97,7 @@ export default function Navbar() {
             />
             <div>
               <p className="font-sans antialiased text-base text-current">
-                {firstLastName}
+                {user.username}
               </p>
               <small className="font-sans antialiased text-sm text-stone-600">
                 {jobRole}

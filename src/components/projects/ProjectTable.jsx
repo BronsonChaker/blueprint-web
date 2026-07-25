@@ -1,11 +1,13 @@
 import ProjectTableRow from "../projects/ProjectTableRow";
 import { getJobs } from "../../api/endpoints/projects";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 
 export default function ProjectTable() {
   const [jobs, setJobs] = useState([]);
   const [loading, isLoading] = useState(true);
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     getJobs()
@@ -14,9 +16,13 @@ export default function ProjectTable() {
       .finally(() => isLoading(false));
   }, []);
 
+  const handleSelectJob = (jobId) => {
+    navigate(`/jobs/${jobId}`);
+  };
+
   if (loading) return <p>Loading ...</p>;
   if (error) return <p>Error: {error}</p>;
-  getJobs();
+
   return (
     <table className="w-full">
       <thead>
@@ -47,6 +53,7 @@ export default function ProjectTable() {
             status={job.status}
             stage={job.stage}
             supervisor={`${job.first_name} ${job.last_name}`}
+            onSelect={() => handleSelectJob(job.id)}
           />
         ))}
       </tbody>
