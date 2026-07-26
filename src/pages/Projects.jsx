@@ -25,11 +25,11 @@ export default function Projects() {
           type="search"
           name="project_search"
           placeholder="Search by ID or Address"
-          className="w-100 border-2 border-neutral rounded-xl px-2.5 py-2.5 outline-none"
+          className="w-100 border-2 border-border rounded-xl px-2.5 py-2.5 outline-none"
         />
 
         {/* Supervisor Filter */}
-        <div className="justify-center border-2 text-lg border-neutral rounded-xl px-2.5 py-2.5 outline-none">
+        <div className="justify-center border-2 text-lg border-border rounded-xl px-2.5 py-2.5 outline-none">
           <select
             name="selectedSupervsor"
             id="supervisorSelect"
@@ -43,7 +43,7 @@ export default function Projects() {
         </div>
 
         {/* Status Filter */}
-        <div className="justify-center border-2 text-lg border-neutral rounded-xl px-2.5 py-2.5 outline-none">
+        <div className="justify-center border-2 text-lg border-border rounded-xl px-2.5 py-2.5 outline-none">
           <select
             name="selectedSupervsor"
             id="supervisorSelect"
@@ -58,7 +58,7 @@ export default function Projects() {
         </div>
 
         {/* Stage Filter */}
-        <div className="justify-center border-2 text-lg border-neutral rounded-xl px-2.5 py-2.5 outline-none">
+        <div className="justify-center border-2 text-lg border-border rounded-xl px-2.5 py-2.5 outline-none">
           <select
             name="selectedSupervsor"
             id="supervisorSelect"

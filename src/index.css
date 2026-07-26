@@ -17,6 +17,15 @@
   font-family: "JetBrains Mono", monospace;
 } */
 
+a.active {
+  color: #1a365d;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 10px;
+  text-decoration-color: #1a365d;
+}
+
 .selected * {
   background-color: #e4e5e5;
 }

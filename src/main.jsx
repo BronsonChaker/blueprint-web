@@ -26,14 +26,25 @@ createRoot(document.getElementById("root")).render(
           <Route element={<ProtectedRoute />}>
             <Route path="/dashboard" element={<Dashboard />} />
           </Route>
+
+          {/* Auth Routes */}
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/forgotpassword" element={<ForgotPassword />} />
+
+          {/* Main Routes */}
           <Route path="/projects" element={<Projects />} />
           <Route path="/inspections" element={<Inpsections />} />
           <Route path="/reports" element={<Reports />} />
           <Route path="/vendors" element={<Vendors />} />
+
+          {/* Jobs Routes */}
           <Route path="/jobs/:id" element={<ProjectView />} />
+          <Route path="/jobs/:id/details" element={<ProjectView />} />
+          <Route path="/jobs/:id/tasks" element={<ProjectView />} />
+          <Route path="/jobs/:id/documents" element={<ProjectView />} />
+          <Route path="/jobs/:id/inspections" element={<ProjectView />} />
+          <Route path="/jobs/:id/insights" element={<ProjectView />} />
         </Routes>
       </AuthProvider>
     </BrowserRouter>
