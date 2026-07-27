@@ -40,11 +40,6 @@ createRoot(document.getElementById("root")).render(
 
           {/* Jobs Routes */}
           <Route path="/jobs/:id" element={<ProjectView />} />
-          <Route path="/jobs/:id/details" element={<ProjectView />} />
-          <Route path="/jobs/:id/tasks" element={<ProjectView />} />
-          <Route path="/jobs/:id/documents" element={<ProjectView />} />
-          <Route path="/jobs/:id/inspections" element={<ProjectView />} />
-          <Route path="/jobs/:id/insights" element={<ProjectView />} />
         </Routes>
       </AuthProvider>
     </BrowserRouter>

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import ProjectHeader from "../components/projects/ProjectHeader";
 import ProjectContainer from "../components/projects/ProjectContainer";
-import ProjectTabs from "../components/projects/ProjectTabs";
+import BasicTabs from "../components/BasicTabs";
 
 export default function ProjectView() {
   const [job, setJob] = useState(null);
@@ -25,13 +25,10 @@ export default function ProjectView() {
   if (error) return <p>Error: {error}</p>;
   if (!job) return <p>No job found.</p>;
 
-  const tabData = [{ label: "Tab 1" }, { label: "Tab 2" }, { label: "Tab 3" }];
-
   return (
     <main className="px-20 h-screen">
       <ProjectHeader address={job.address} jobNumber={job.job_number} />
       <ProjectContainer />
-      <ProjectTabs tabs={tabData} />
     </main>
   );
 }

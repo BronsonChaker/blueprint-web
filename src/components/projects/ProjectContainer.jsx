@@ -1,9 +1,9 @@
-import ProjectNavbar from "./ProjectNavbar";
+import BasicTabs from "../BasicTabs";
 
 export default function ProjectContainer() {
   return (
     <div>
-      <ProjectNavbar />
+      <BasicTabs />
     </div>
   );
 }
