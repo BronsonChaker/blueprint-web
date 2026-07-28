@@ -1,11 +1,88 @@
+import { FaUser } from "react-icons/fa";
+import { LiaFileContractSolid } from "react-icons/lia";
+import { AiOutlineStock } from "react-icons/ai";
+import { FaStickyNote } from "react-icons/fa";
+import { RxActivityLog } from "react-icons/rx";
+
 export default function ProjectDetails() {
+  let customerName = "John Smith";
+  let customerNumber = "0412350832";
+  let customerEmail = "johnsmith@gmail.com";
+  let customerAddress = "124 Golden Street, Leonay, NSW 2750";
+  let contractStart = "November 12, 2026";
+  let contractEnd = "November 15, 2027";
+  let contractPrice = "$749,550.00";
   return (
     <div class="w-full grid grid-cols-4 gap-4">
-      <div className="border col-span-2">Customer Information</div>
-      <div className="border col-span-2">Customer Details</div>
-      <div className="border col-span-3">Financial Overview</div>
-      <div className="border col-span-1">Project Notes</div>
-      <div className="border col-span-4">Project Activity</div>
+      {/* CUSTOMER DETAILS */}
+      <div className="border border-stone-400 col-span-2 rounded-sm">
+        <div className="flex flex-row items-center px-4 gap-4 bg-primary text-white py-2">
+          <FaUser />
+          <span className="text-sm font-semibold">CUSTOMER DETAILS</span>
+        </div>
+        <div className="w-full grid grid-cols-2 p-5 gap-5">
+          <div className="flex flex-col col-span-1">
+            <span className="font-semibold">Full Name</span>
+            <span>{customerName}</span>
+          </div>
+          <div className="flex flex-col col-span-1">
+            <span className="font-semibold">Phone Number</span>
+            <span>{customerNumber}</span>
+          </div>
+          <div className="flex flex-col col-span-1">
+            <span className="font-semibold">Email Address</span>
+            <span>{customerEmail}</span>
+          </div>
+          <div className="flex flex-col col-span-1">
+            <span className="font-semibold">Billing Address</span>
+            <span>{customerAddress}</span>
+          </div>
+        </div>
+      </div>
+
+      {/* CONTRACT DETAILS */}
+      <div className="border border-stone-400 col-span-2 rounded-sm">
+        <div className="flex flex-row items-center px-4 gap-4 bg-primary text-white py-2">
+          <LiaFileContractSolid />
+          <span className="text-sm font-semibold">CONTRACT DETAILS</span>
+        </div>
+        <div className="w-full grid grid-cols-2 p-5 gap-5">
+          <div className="flex flex-col">
+            <span className="font-semibold col-span-1">
+              Contract Start Date
+            </span>
+            <span>{contractStart}</span>
+          </div>
+          <div className="flex flex-col">
+            <span className="font-semibold col-span-1">Contract End Date</span>
+            <span>{contractEnd}</span>
+          </div>
+
+          <div className="flex flex-col">
+            <span className="font-semibold col-span-1">Contract Price</span>
+            <span>{contractPrice}</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="border col-span-2">
+        <div className="flex flex-row items-center px-4 gap-4 bg-primary text-white py-2">
+          <AiOutlineStock />
+          <span className="text-sm font-semibold">FINANCIAL OVERVIEW</span>
+        </div>
+      </div>
+      <div className="border col-span-2">
+        <div className="flex flex-row items-center px-4 gap-4 bg-primary text-white py-2">
+          <FaStickyNote />
+          <span className="text-sm font-semibold">PROJECT NOTES</span>
+        </div>
+      </div>
+      <div className="border col-span-4">
+        <div className="flex flex-row items-center px-4 gap-4 bg-primary text-white py-2">
+          <RxActivityLog />
+          <span className="text-sm font-semibold">PROJECT ACTIVITY </span>
+        </div>
+      </div>
     </div>
   );
 }
