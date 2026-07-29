@@ -3,6 +3,7 @@ import { LiaFileContractSolid } from "react-icons/lia";
 import { AiOutlineStock } from "react-icons/ai";
 import { FaStickyNote } from "react-icons/fa";
 import { RxActivityLog } from "react-icons/rx";
+import { Progress } from "flowbite-react";
 
 export default function ProjectDetails() {
   let customerName = "John Smith";
@@ -73,7 +74,7 @@ export default function ProjectDetails() {
         </div>
 
         <div className="grid grid-cols-2 p-5 gap-5">
-          <div className="flex flex-col">
+          <div className="flex flex-col col-span-1">
             <span className="font-semibold">Total Contract Value</span>
             <span className="text-xl font-bold text-green-700">
               $758,240.48
@@ -81,21 +82,23 @@ export default function ProjectDetails() {
             <span className="text-xs">Incl. Variations</span>
           </div>
 
-          <div className="flex flex-col">
+          <div className="flex flex-col col-span-1">
             <span>Total ETS Spend</span>
             <span className="text-xl font-bold text-amber-600">$25,000.00</span>
             <span className="text-xs">3.2% Contract Value</span>
           </div>
 
-          <div className="flex flex-col gap-1">
+          <div className="flex flex-col gap-1 col-span-1">
             <span>Amount Claimed</span>
             <span className="text-xl font-bold text-primary">$425,000.00</span>
             <span className="text-xs">56% of Contract Value</span>
-            <progress
-              value={56}
-              max={100}
-              className="[&::-webkit-progress-bar]:rounded-md [&::-webkit-progress-value]:rounded-md   [&::-webkit-progress-bar]:bg-slate-300 [&::-webkit-progress-value]:bg-primary [&::-moz-progress-bar]:bg-violet-400"
-            ></progress>
+            <Progress progress={45} color="green" />
+          </div>
+          <div className="flex flex-col gap-1 col-span-1">
+            <span>Current Stage</span>
+            <span className="text-xl font-bold text-primary">Lockup Stage</span>
+            <span className="text-xs">56% of Contract Value</span>
+            <Progress progress={45} color="green" />
           </div>
         </div>
       </div>
