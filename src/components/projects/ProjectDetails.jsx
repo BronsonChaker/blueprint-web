@@ -65,18 +65,50 @@ export default function ProjectDetails() {
         </div>
       </div>
 
+      {/* Financial Overview */}
       <div className="border col-span-2">
         <div className="flex flex-row items-center px-4 gap-4 bg-primary text-white py-2">
           <AiOutlineStock />
           <span className="text-sm font-semibold">FINANCIAL OVERVIEW</span>
         </div>
+
+        <div className="grid grid-cols-2 p-5 gap-5">
+          <div className="flex flex-col">
+            <span className="font-semibold">Total Contract Value</span>
+            <span className="text-xl font-bold text-green-700">
+              $758,240.48
+            </span>
+            <span className="text-xs">Incl. Variations</span>
+          </div>
+
+          <div className="flex flex-col">
+            <span>Total ETS Spend</span>
+            <span className="text-xl font-bold text-amber-600">$25,000.00</span>
+            <span className="text-xs">3.2% Contract Value</span>
+          </div>
+
+          <div className="flex flex-col gap-1">
+            <span>Amount Claimed</span>
+            <span className="text-xl font-bold text-primary">$425,000.00</span>
+            <span className="text-xs">56% of Contract Value</span>
+            <progress
+              value={56}
+              max={100}
+              className="[&::-webkit-progress-bar]:rounded-md [&::-webkit-progress-value]:rounded-md   [&::-webkit-progress-bar]:bg-slate-300 [&::-webkit-progress-value]:bg-primary [&::-moz-progress-bar]:bg-violet-400"
+            ></progress>
+          </div>
+        </div>
       </div>
+
+      {/* Project Notes */}
       <div className="border col-span-2">
         <div className="flex flex-row items-center px-4 gap-4 bg-primary text-white py-2">
           <FaStickyNote />
           <span className="text-sm font-semibold">PROJECT NOTES</span>
         </div>
       </div>
+
+      {/* Project Activity */}
       <div className="border col-span-4">
         <div className="flex flex-row items-center px-4 gap-4 bg-primary text-white py-2">
           <RxActivityLog />
