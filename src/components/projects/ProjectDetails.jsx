@@ -4,6 +4,7 @@ import { AiOutlineStock } from "react-icons/ai";
 import { FaStickyNote } from "react-icons/fa";
 import { RxActivityLog } from "react-icons/rx";
 import { Progress } from "flowbite-react";
+import { Avatar } from "flowbite-react";
 
 export default function ProjectDetails() {
   let customerName = "John Smith";
@@ -67,7 +68,7 @@ export default function ProjectDetails() {
       </div>
 
       {/* Financial Overview */}
-      <div className="border col-span-2">
+      <div className="border col-span-4">
         <div className="flex flex-row items-center px-4 gap-4 bg-primary text-white py-2">
           <AiOutlineStock />
           <span className="text-sm font-semibold">FINANCIAL OVERVIEW</span>
@@ -83,22 +84,58 @@ export default function ProjectDetails() {
           </div>
 
           <div className="flex flex-col col-span-1">
-            <span>Total ETS Spend</span>
+            <span className="font-semibold">Total ETS Spend</span>
             <span className="text-xl font-bold text-amber-600">$25,000.00</span>
             <span className="text-xs">3.2% Contract Value</span>
           </div>
 
           <div className="flex flex-col gap-1 col-span-1">
-            <span>Amount Claimed</span>
+            <span className="font-semibold">Amount Claimed</span>
             <span className="text-xl font-bold text-primary">$425,000.00</span>
             <span className="text-xs">56% of Contract Value</span>
             <Progress progress={45} color="green" />
           </div>
-          <div className="flex flex-col gap-1 col-span-1">
-            <span>Current Stage</span>
-            <span className="text-xl font-bold text-primary">Lockup Stage</span>
-            <span className="text-xs">56% of Contract Value</span>
-            <Progress progress={45} color="green" />
+          <div className="flex flex-col justify-between gap-3 col-span-1">
+            <span className="font-semibold">Current Stage</span>
+            <span className="text-xs">1 / 5 Stages Completed</span>
+            <div className="flex flex-row gap-1">
+              <div className="w-1/5">
+                <div className="w-full flex flex-col text-center justify-center">
+                  <span className="text-xs font-bold text-green-600">Slab</span>
+                  <Progress progress={100} color="green" />
+                </div>
+              </div>
+              <div className="w-1/5 ">
+                <div className="w-full flex flex-col text-center justify-center">
+                  <span className="text-xs font-bold text-green-600">
+                    Frame
+                  </span>
+                  <Progress progress={100} color="green" />
+                </div>
+              </div>
+              <div className="w-1/5 ">
+                <div className="w-full flex flex-col text-center justify-center">
+                  <span className="text-xs font-bold text-green-600">
+                    Lockup
+                  </span>
+                  <Progress progress={100} color="green" />
+                </div>
+              </div>
+              <div className="w-1/5 opacity-35">
+                <div className="w-full flex flex-col text-center justify-center">
+                  <span className="text-xs font-bold text-primary">Fix</span>
+                  <Progress progress={0} color="green" />
+                </div>
+              </div>
+              <div className="w-1/5 opacity-35">
+                <div className="w-full flex flex-col text-center justify-center">
+                  <span className="text-xs font-bold text-primary">
+                    Complete
+                  </span>
+                  <Progress progress={0} color="green" />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -109,10 +146,37 @@ export default function ProjectDetails() {
           <FaStickyNote />
           <span className="text-sm font-semibold">PROJECT NOTES</span>
         </div>
+        <div className="p-2">
+          <div className="p-2 px-5 justify-between flex flex-col">
+            <div className="flex flex-row gap-3 items-center justify-between">
+              <div className="flex flex-row items-center gap-2">
+                <div>
+                  <Avatar />
+                </div>
+                <div className="flex flex-col">
+                  <span className="font-semibold text-lg">Jeff Smith</span>
+                  <span className="text-sm font-medium">Head of Drafting</span>
+                </div>
+              </div>
+              <div>
+                <span className="text-sm text-subtext">Feb 26, 2025</span>
+              </div>
+            </div>
+            <div className="mt-2 flex flex-col gap-2">
+              <span className="text-xl font-semibold">
+                Architectural Plans Updated
+              </span>
+              <span className="text-md ">
+                Architectural plans have been updated to Revision F. These have
+                been uploaded into documents section of project.
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Project Activity */}
-      <div className="border col-span-4">
+      <div className="border col-span-2">
         <div className="flex flex-row items-center px-4 gap-4 bg-primary text-white py-2">
           <RxActivityLog />
           <span className="text-sm font-semibold">PROJECT ACTIVITY </span>
