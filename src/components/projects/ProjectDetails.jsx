@@ -1,10 +1,9 @@
 import { FaUser } from "react-icons/fa";
 import { LiaFileContractSolid } from "react-icons/lia";
 import { AiOutlineStock } from "react-icons/ai";
-import { FaStickyNote } from "react-icons/fa";
 import { RxActivityLog } from "react-icons/rx";
 import { Progress } from "flowbite-react";
-import { Avatar } from "flowbite-react";
+import ProjectNoteContainer from "./ProjectNoteContainer";
 
 export default function ProjectDetails() {
   let customerName = "John Smith";
@@ -17,8 +16,8 @@ export default function ProjectDetails() {
   return (
     <div class="w-full grid grid-cols-4 gap-4">
       {/* CUSTOMER DETAILS */}
-      <div className="border border-stone-400 col-span-2 rounded-sm">
-        <div className="flex flex-row items-center px-4 gap-4 bg-primary text-white py-2">
+      <div className="col-span-2 bg-stone-50 shadow-sm rounded-lg">
+        <div className="flex flex-row items-center px-4 gap-4 bg-primary text-white py-2 rounded-t-lg h-10">
           <FaUser />
           <span className="text-sm font-semibold">CUSTOMER DETAILS</span>
         </div>
@@ -43,8 +42,8 @@ export default function ProjectDetails() {
       </div>
 
       {/* CONTRACT DETAILS */}
-      <div className="border border-stone-400 col-span-2 rounded-sm">
-        <div className="flex flex-row items-center px-4 gap-4 bg-primary text-white py-2">
+      <div className=" col-span-2 bg-stone-50 shadow-sm rounded-lg">
+        <div className="flex flex-row items-center px-4 gap-4 bg-primary text-white py-2 rounded-t-lg h-10">
           <LiaFileContractSolid />
           <span className="text-sm font-semibold">CONTRACT DETAILS</span>
         </div>
@@ -68,8 +67,8 @@ export default function ProjectDetails() {
       </div>
 
       {/* Financial Overview */}
-      <div className="border col-span-4">
-        <div className="flex flex-row items-center px-4 gap-4 bg-primary text-white py-2">
+      <div className="col-span-4 bg-stone-50 shadow-sm rounded-lg">
+        <div className="flex flex-row items-center px-4 gap-4 bg-primary text-white py-2 rounded-t-lg h-10">
           <AiOutlineStock />
           <span className="text-sm font-semibold">FINANCIAL OVERVIEW</span>
         </div>
@@ -141,43 +140,13 @@ export default function ProjectDetails() {
       </div>
 
       {/* Project Notes */}
-      <div className="border col-span-2">
-        <div className="flex flex-row items-center px-4 gap-4 bg-primary text-white py-2">
-          <FaStickyNote />
-          <span className="text-sm font-semibold">PROJECT NOTES</span>
-        </div>
-        <div className="p-2">
-          <div className="p-2 px-5 justify-between flex flex-col">
-            <div className="flex flex-row gap-3 items-center justify-between">
-              <div className="flex flex-row items-center gap-2">
-                <div>
-                  <Avatar />
-                </div>
-                <div className="flex flex-col">
-                  <span className="font-semibold text-lg">Jeff Smith</span>
-                  <span className="text-sm font-medium">Head of Drafting</span>
-                </div>
-              </div>
-              <div>
-                <span className="text-sm text-subtext">Feb 26, 2025</span>
-              </div>
-            </div>
-            <div className="mt-2 flex flex-col gap-2">
-              <span className="text-xl font-semibold">
-                Architectural Plans Updated
-              </span>
-              <span className="text-md ">
-                Architectural plans have been updated to Revision F. These have
-                been uploaded into documents section of project.
-              </span>
-            </div>
-          </div>
-        </div>
+      <div className="col-span-2 bg-stone-50 shadow-sm rounded-lg">
+        <ProjectNoteContainer />
       </div>
 
       {/* Project Activity */}
-      <div className="border col-span-2">
-        <div className="flex flex-row items-center px-4 gap-4 bg-primary text-white py-2">
+      <div className="col-span-2 bg-stone-50 shadow-sm rounded-lg">
+        <div className="flex flex-row items-center px-4 gap-4 bg-primary text-white py-2 rounded-t-lg h-10">
           <RxActivityLog />
           <span className="text-sm font-semibold">PROJECT ACTIVITY </span>
         </div>
