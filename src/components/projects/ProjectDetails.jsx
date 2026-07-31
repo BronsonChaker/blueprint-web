@@ -96,7 +96,7 @@ export default function ProjectDetails() {
           </div>
           <div className="flex flex-col justify-between gap-3 col-span-1">
             <span className="font-semibold">Current Stage</span>
-            <span className="text-xs">1 / 5 Stages Completed</span>
+            <span className="text-xs">3 / 5 Stages Completed</span>
             <div className="flex flex-row gap-1">
               <div className="w-1/5">
                 <div className="w-full flex flex-col text-center justify-center">

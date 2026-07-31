@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import ProjectHeader from "../components/projects/ProjectHeader";
 import ProjectContainer from "../components/projects/ProjectContainer";
-import BasicTabs from "../components/BasicTabs";
 
 export default function ProjectView() {
   const [job, setJob] = useState(null);

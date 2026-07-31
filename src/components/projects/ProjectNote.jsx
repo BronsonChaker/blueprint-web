@@ -10,8 +10,10 @@ export default function ProjectNote() {
               <Avatar />
             </div>
             <div className="flex flex-col">
-              <span className="font-semibold text-lg">Jeff Smith</span>
-              <span className="text-sm font-medium">Head of Drafting</span>
+              <span className="font-semibold text-md">Jeff Smith</span>
+              <span className="text-xs text-subtext font-medium">
+                Head of Drafting
+              </span>
             </div>
           </div>
           <div>
@@ -19,10 +21,10 @@ export default function ProjectNote() {
           </div>
         </div>
         <div className="mt-2 flex flex-col gap-2">
-          <span className="text-xl font-semibold">
+          <span className="text-lg font-semibold">
             Architectural Plans Updated
           </span>
-          <span className="text-md ">
+          <span className="text-sm ">
             Architectural plans have been updated to Revision F. These have been
             uploaded into documents section of project.
           </span>

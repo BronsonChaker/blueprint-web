@@ -8,6 +8,7 @@ import ProjectTasks from "./projects/ProjectTasks";
 import ProjectDocuments from "./projects/ProjectDocuments";
 import ProjectInspections from "./projects/ProjectInspections";
 import ProjectInsights from "./projects/ProjectInsights";
+import { CgDetailsMore } from "react-icons/cg";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -20,7 +21,7 @@ function CustomTabPanel(props) {
       aria-labelledby={`simple-tab-${index}`}
       {...other}
     >
-      {value === index && <Box sx={{ py: 2 }}>{children}</Box>}
+      {value === index && <Box sx={{ p: 2 }}>{children}</Box>}
     </div>
   );
 }
@@ -53,7 +54,12 @@ export default function BasicTabs() {
           onChange={handleChange}
           aria-label="basic tabs example"
         >
-          <Tab label="Details" {...a11yProps(0)} />
+          <Tab
+            // icon={<CgDetailsMore />}
+            label="Details"
+            {...a11yProps(0)}
+            // iconPosition="start"
+          />
           <Tab label="Tasks" {...a11yProps(1)} />
           <Tab label="Documents" {...a11yProps(2)} />
           <Tab label="Inspections" {...a11yProps(2)} />
