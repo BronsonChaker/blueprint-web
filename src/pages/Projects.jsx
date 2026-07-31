@@ -1,5 +1,7 @@
 import { IoMdAddCircle } from "react-icons/io";
 import ProjectTable from "../components/projects/ProjectTable";
+import ModalContainer from "../components/Modal/ModalContainer";
+import { Link } from "react-router";
 
 export default function Projects() {
   let job_count = 21;
@@ -76,11 +78,14 @@ export default function Projects() {
           </select>
         </div>
 
-        <button className="flex flex-row items-center gap-1 text-lg bg-primary text-white px-2 rounded-xl hover:opacity-90 hover:duration-300 hover:cursor-pointer">
+        <Link
+          to="/new-project"
+          className="flex flex-row items-center gap-1 text-lg bg-primary text-white px-2 rounded-xl hover:opacity-90 hover:duration-300 hover:cursor-pointer"
+        >
           {" "}
           <IoMdAddCircle />
           <p>New Project</p>
-        </button>
+        </Link>
       </div>
 
       {/* Project Table Section */}

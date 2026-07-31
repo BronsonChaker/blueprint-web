@@ -2,6 +2,7 @@ import ProjectTableRow from "../projects/ProjectTableRow";
 import { getJobs } from "../../api/endpoints/projects";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
+import {} from "react";
 
 export default function ProjectTable() {
   const [jobs, setJobs] = useState([]);

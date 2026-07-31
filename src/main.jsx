@@ -15,6 +15,7 @@ import Navbar from "./components/Navbar.jsx";
 import { AuthProvider } from "./context/AuthContext.jsx";
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
 import ProjectView from "./pages/ProjectView.jsx";
+import NewProject from "./pages/Projects/NewProject.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -40,6 +41,7 @@ createRoot(document.getElementById("root")).render(
 
           {/* Jobs Routes */}
           <Route path="/jobs/:id" element={<ProjectView />} />
+          <Route path="/new-project" element={<NewProject />} />
         </Routes>
       </AuthProvider>
     </BrowserRouter>
