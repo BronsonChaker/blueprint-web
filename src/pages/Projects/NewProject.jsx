@@ -1,6 +1,43 @@
 import { Link } from "react-router";
+import { useState } from "react";
 
-export default function NewProject() {
+export default function NewProject({ jobId = null }) {
+  const STATUS_CHOICES = [
+    "pending",
+    "active",
+    "on_hold",
+    "finalised",
+    "completed",
+  ];
+  const STAGE_CHOICES = [
+    "sales",
+    "pre-construction",
+    "construction",
+    "completion",
+    "maintenance",
+  ];
+
+  const initialState = {
+    job_number: "",
+    organisation: "",
+    supervisor: "",
+    template: "",
+    name: "",
+    address: "",
+    status: "",
+    stage: "",
+    client_name: "",
+    client_email: "",
+    client_phone: "",
+    contract_start_date: "",
+    contract_end_date: "",
+    construction_start_date: "",
+    construction_end_date: "",
+  };
+
+  const [formData, setFormData] = useState(initialState);
+  const [supervisor, setSupervisors] = useState([]);
+
   return (
     <main className="px-20 mt-5 h-screen w-full flex flex-col">
       <title>New Project</title>

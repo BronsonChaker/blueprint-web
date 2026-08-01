@@ -14,7 +14,7 @@ export default function ProjectDetails() {
   let contractEnd = "November 15, 2027";
   let contractPrice = "$749,550.00";
   return (
-    <div class="w-full grid grid-cols-4 gap-4">
+    <div className="w-full grid grid-cols-4 gap-4">
       {/* CUSTOMER DETAILS */}
       <div className="col-span-2 bg-stone-50 shadow-sm rounded-lg">
         <div className="flex flex-row items-center px-4 gap-4 bg-primary text-white py-2 rounded-t-lg h-10">

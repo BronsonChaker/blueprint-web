@@ -17,7 +17,10 @@ export async function getJobs() {
   }
 }
 
-export async function createJob() {}
+export async function createJob() {
+  const url = `${baseUrl}/create`
+  try
+}
 
 export async function viewProject(id) {
   const url = `${baseUrl}/jobs/${id}`;
