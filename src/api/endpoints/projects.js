@@ -18,8 +18,26 @@ export async function getJobs() {
 }
 
 export async function createJob() {
-  const url = `${baseUrl}/create`
-  try
+  const url = `${baseUrl}/create`;
+}
+
+export async function getSupervisors() {
+  const url = `${baseUrl}/organisations/users`;
+  try {
+    const response = await fetch(url, {
+      headers: { Authorization: `Bearer ${accessToken}` },
+    });
+
+    if (!response.ok) {
+      throw new Error(`Reponse status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    console.log(data);
+    return data;
+  } catch (error) {
+    console.error(error.message);
+  }
 }
 
 export async function viewProject(id) {

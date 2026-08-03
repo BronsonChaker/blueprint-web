@@ -1,5 +1,6 @@
 import { Link } from "react-router";
-import { useState } from "react";
+
+import SupervisorSelect from "../../components/SupervisorSelect.jsx";
 
 export default function NewProject({ jobId = null }) {
   const STATUS_CHOICES = [
@@ -35,13 +36,10 @@ export default function NewProject({ jobId = null }) {
     construction_end_date: "",
   };
 
-  const [formData, setFormData] = useState(initialState);
-  const [supervisor, setSupervisors] = useState([]);
-
   return (
     <main className="px-20 mt-5 h-screen w-full flex flex-col">
       <title>New Project</title>
-
+      <SupervisorSelect />
       <div className="text-sm text-subtext flex flex-row gap-2">
         <Link to="/projects" className="hover:underline hover:text-blue-500 ">
           Projects
