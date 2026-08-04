@@ -1,7 +1,7 @@
 import { IoMdAddCircle } from "react-icons/io";
 import ProjectTable from "../components/projects/ProjectTable";
-import ModalContainer from "../components/Modal/ModalContainer";
 import { Link } from "react-router";
+import SupervisorSelect from "../components/SupervisorSelect";
 
 export default function Projects() {
   let job_count = 21;
@@ -32,16 +32,7 @@ export default function Projects() {
 
         {/* Supervisor Filter */}
         <div className="justify-center border-2 text-lg border-border rounded-xl px-2.5 py-2.5 outline-none">
-          <select
-            name="selectedSupervsor"
-            id="supervisorSelect"
-            className="outline-none"
-          >
-            <option value="">Supervisor</option>
-            <option value="">Bronson Chaker</option>
-            <option value="">John Smith</option>
-            <option value="">Mario Tan</option>
-          </select>
+          <SupervisorSelect />
         </div>
 
         {/* Status Filter */}

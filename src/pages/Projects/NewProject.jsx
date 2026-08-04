@@ -1,45 +1,31 @@
 import { Link } from "react-router";
-
+import { useState } from "react";
 import SupervisorSelect from "../../components/SupervisorSelect.jsx";
 
-export default function NewProject({ jobId = null }) {
-  const STATUS_CHOICES = [
-    "pending",
-    "active",
-    "on_hold",
-    "finalised",
-    "completed",
-  ];
-  const STAGE_CHOICES = [
-    "sales",
-    "pre-construction",
-    "construction",
-    "completion",
-    "maintenance",
-  ];
-
-  const initialState = {
-    job_number: "",
+export default function NewProject() {
+  const [form, setForm] = useState({
     organisation: "",
+    job_number: "",
     supervisor: "",
     template: "",
     name: "",
     address: "",
-    status: "",
-    stage: "",
     client_name: "",
     client_email: "",
     client_phone: "",
+    client_billing: "",
     contract_start_date: "",
     contract_end_date: "",
+    contract_price: "",
     construction_start_date: "",
     construction_end_date: "",
-  };
+  });
 
+  console.log(form);
   return (
     <main className="px-20 mt-5 h-screen w-full flex flex-col">
       <title>New Project</title>
-      <SupervisorSelect />
+
       <div className="text-sm text-subtext flex flex-row gap-2">
         <Link to="/projects" className="hover:underline hover:text-blue-500 ">
           Projects
@@ -74,6 +60,13 @@ export default function NewProject({ jobId = null }) {
                   type="text"
                   placeholder="000000"
                   className="text-sm px-2 py-2 border border-stone-300 rounded-md"
+                  onChange={(e) => {
+                    setForm({
+                      ...form,
+                      job_number: e.target.value,
+                    });
+                  }}
+                  value={form.job_number}
                 />
               </div>
 
@@ -85,6 +78,13 @@ export default function NewProject({ jobId = null }) {
                   type="text"
                   placeholder="Lot 123 Street Name, Suburb"
                   className="text-sm px-2 py-2 border border-stone-300 rounded-md"
+                  onChange={(e) => {
+                    setForm({
+                      ...form,
+                      name: e.target.value,
+                    });
+                  }}
+                  value={form.name}
                 />
               </div>
 
@@ -96,6 +96,13 @@ export default function NewProject({ jobId = null }) {
                   type="text"
                   placeholder="Lot 123 Street Name, Suburb"
                   className="text-sm px-2 py-2 border border-stone-300 rounded-md leading-2"
+                  onChange={(e) => {
+                    setForm({
+                      ...form,
+                      address: e.target.value,
+                    });
+                  }}
+                  value={form.address}
                 />
               </div>
 
@@ -103,16 +110,15 @@ export default function NewProject({ jobId = null }) {
                 <label htmlFor="" className="text-sm">
                   Supervisor
                 </label>
-                <select
-                  name="selectedSupervsor"
-                  id="supervisorSelect"
-                  className="text-sm px-1 py-2 border border-stone-300 rounded-md"
-                >
-                  <option value="">Supervisor</option>
-                  <option value="">Bronson Chaker</option>
-                  <option value="">John Smith</option>
-                  <option value="">Mario Tan</option>
-                </select>
+                <SupervisorSelect
+                  onChange={(e) => {
+                    setForm({
+                      ...form,
+                      supervisor: e.target.value,
+                    });
+                  }}
+                  value={form.supervisor}
+                />
               </div>
 
               <div className="flex flex-col col-span-1 gap-1.5">
@@ -123,6 +129,13 @@ export default function NewProject({ jobId = null }) {
                   name="selectedSupervsor"
                   id="supervisorSelect"
                   className="text-sm px-1 py-2 border border-stone-300 rounded-md"
+                  onChange={(e) => {
+                    setForm({
+                      ...form,
+                      template: e.target.value,
+                    });
+                  }}
+                  value={form.template}
                 >
                   <option value="">Template</option>
                   <option value="">240 Day Template</option>
@@ -169,6 +182,13 @@ export default function NewProject({ jobId = null }) {
                   type="email"
                   placeholder="email@email.com"
                   className="text-sm px-2 py-2 border border-stone-300 rounded-md"
+                  onChange={(e) => {
+                    setForm({
+                      ...form,
+                      client_email: e.target.value,
+                    });
+                  }}
+                  value={form.client_email}
                 />
               </div>
 
@@ -180,6 +200,13 @@ export default function NewProject({ jobId = null }) {
                   type="number"
                   placeholder="0400000000"
                   className="text-sm px-2 py-2 border border-stone-300 rounded-md [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                  onChange={(e) => {
+                    setForm({
+                      ...form,
+                      client_phone: e.target.value,
+                    });
+                  }}
+                  value={form.client_phone}
                 />
               </div>
               <div className="flex flex-col col-span-1 gap-1.5">
@@ -190,6 +217,13 @@ export default function NewProject({ jobId = null }) {
                   type="text"
                   placeholder="Lot 123 Street Name, Suburb"
                   className="text-sm px-2 py-2 border border-stone-300 rounded-md"
+                  onChange={(e) => {
+                    setForm({
+                      ...form,
+                      client_billing: e.target.value,
+                    });
+                  }}
+                  value={form.client_billing}
                 />
               </div>
             </div>
@@ -209,6 +243,13 @@ export default function NewProject({ jobId = null }) {
                   type="date"
                   placeholder="dd/mm/yyyy"
                   className="text-sm px-2 py-2 border border-stone-300 rounded-md"
+                  onChange={(e) => {
+                    setForm({
+                      ...form,
+                      contract_start_date: e.target.value,
+                    });
+                  }}
+                  value={form.contract_start_date}
                 />
               </div>
 
@@ -220,6 +261,13 @@ export default function NewProject({ jobId = null }) {
                   type="date"
                   placeholder="dd/mm/yyyy"
                   className="text-sm px-2 py-2 border border-stone-300 rounded-md"
+                  onChange={(e) => {
+                    setForm({
+                      ...form,
+                      contract_end_date: e.target.value,
+                    });
+                  }}
+                  value={form.contract_end_date}
                 />
               </div>
 
@@ -231,6 +279,13 @@ export default function NewProject({ jobId = null }) {
                   type="number"
                   placeholder="0.00"
                   className="text-sm px-2 py-2 border border-stone-300 rounded-md [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                  onChange={(e) => {
+                    setForm({
+                      ...form,
+                      contract_price: e.target.value,
+                    });
+                  }}
+                  value={form.contract_price}
                 />
               </div>
             </div>
