@@ -2,9 +2,22 @@ import { IoMdAddCircle } from "react-icons/io";
 import ProjectTable from "../components/projects/ProjectTable";
 import { Link } from "react-router";
 import SupervisorSelect from "../components/SupervisorSelect";
+import { useState, useEffect } from "react";
+import { getJobCount } from "../api/endpoints/projects";
+("../api/endpoints/projects.js");
 
 export default function Projects() {
-  let job_count = 21;
+  const [jobCount, setJobCount] = useState(null);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    getJobCount()
+      .then((data) => setJobCount(data.count ?? data))
+      .catch(() => setError("Failed to load job count!"));
+  }, []);
+
+  if (error) return <p>{error}</p>;
+  if (jobCount === null) return <p>Loading...</p>;
 
   return (
     <div className="px-20 mt-10 h-screen w-full">
@@ -15,7 +28,7 @@ export default function Projects() {
         <div className="w-1/2">
           <h1 className="font-bold text-primary text-4xl">Projects</h1>
           <p className="text-lg text-subtext mt-2">
-            You are assigned {job_count} projects. Select a project to view
+            You are assigned {jobCount} projects. Select a project to view
             schedule and additonal information.
           </p>
         </div>
