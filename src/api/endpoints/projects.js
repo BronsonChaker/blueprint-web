@@ -1,5 +1,5 @@
-const baseUrl = import.meta.env.VITE_API_URL;
 const accessToken = localStorage.getItem("access_token");
+const baseUrl = import.meta.env.VITE_API_URL;
 
 export async function getJobs() {
   const url = `${baseUrl}/jobs/`;
@@ -14,6 +14,22 @@ export async function getJobs() {
     return await response.json();
   } catch (error) {
     console.error(error.message);
+  }
+}
+export async function getJobCount() {
+  const url = `${baseUrl}/jobs/count`;
+  try {
+    const response = await fetch(url, {
+      headers: { Authorization: `Bearer ${accessToken}` },
+    });
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error(error.message);
+    throw error;
   }
 }
 

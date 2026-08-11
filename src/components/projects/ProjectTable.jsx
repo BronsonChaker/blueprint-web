@@ -17,6 +17,8 @@ export default function ProjectTable() {
       .finally(() => isLoading(false));
   }, []);
 
+  console.log("Job Count", jobs.length);
+
   const handleSelectJob = (jobId) => {
     navigate(`/jobs/${jobId}`);
   };
