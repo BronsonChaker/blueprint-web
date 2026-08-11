@@ -11,7 +11,7 @@ let jobRole = "Senior Supervisor";
 
 export default function Navbar() {
   const { user, loading, logout } = useAuth();
-  console.log(user);
+  // console.log(user);
 
   if (loading) return null;
   return (
