@@ -16,22 +16,22 @@ export async function getJobs() {
     console.error(error.message);
   }
 }
-export async function getJobCount() {
-  const url = `${baseUrl}/jobs/count`;
-  try {
-    const response = await fetch(url, {
-      headers: { Authorization: `Bearer ${accessToken}` },
-    });
-    if (!response.ok) {
-      throw new Error(`Response status: ${response.status}`);
-    }
+// export async function getJobCount() {
+//   const url = `${baseUrl}/jobs/count`;
+//   try {
+//     const response = await fetch(url, {
+//       headers: { Authorization: `Bearer ${accessToken}` },
+//     });
+//     if (!response.ok) {
+//       throw new Error(`Response status: ${response.status}`);
+//     }
 
-    return await response.json();
-  } catch (error) {
-    console.error(error.message);
-    throw error;
-  }
-}
+//     return await response.json();
+//   } catch (error) {
+//     console.error(error.message);
+//     throw error;
+//   }
+// }
 
 export async function createJob() {
   const url = `${baseUrl}/create`;

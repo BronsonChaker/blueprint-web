@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import {} from "react";
 
-export default function ProjectTable() {
+export default function ProjectTable({ jobCountData }) {
   const [jobs, setJobs] = useState([]);
   const [loading, isLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -17,7 +17,7 @@ export default function ProjectTable() {
       .finally(() => isLoading(false));
   }, []);
 
-  console.log("Job Count", jobs.length);
+  jobCountData(jobs.length);
 
   const handleSelectJob = (jobId) => {
     navigate(`/jobs/${jobId}`);

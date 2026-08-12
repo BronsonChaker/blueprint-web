@@ -2,10 +2,17 @@ import { IoMdAddCircle } from "react-icons/io";
 import ProjectTable from "../components/projects/ProjectTable";
 import { Link } from "react-router";
 import SupervisorSelect from "../components/SupervisorSelect";
+import { useState } from "react";
 
 ("../api/endpoints/projects.js");
 
 export default function Projects() {
+  const [jobCount, setJobCount] = useState("");
+
+  function getJobCount(data) {
+    setJobCount(data);
+  }
+
   return (
     <div className="px-20 mt-10 h-screen w-full">
       <title>Projects</title>
@@ -15,8 +22,8 @@ export default function Projects() {
         <div className="w-1/2">
           <h1 className="font-bold text-primary text-4xl">Projects</h1>
           <p className="text-lg text-subtext mt-2">
-            You are assigned projects. Select a project to view schedule and
-            additonal information.
+            You are assigned {jobCount} projects. Select a project to view
+            schedule and additonal information.
           </p>
         </div>
       </div>
@@ -81,7 +88,7 @@ export default function Projects() {
 
       {/* Project Table Section */}
       <div className="w-full mt-4">
-        <ProjectTable />
+        <ProjectTable jobCountData={getJobCount} />
       </div>
     </div>
   );
