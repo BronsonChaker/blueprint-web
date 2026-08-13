@@ -6,12 +6,13 @@ import { MdDashboard } from "react-icons/md";
 import { LuHouse } from "react-icons/lu";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import { useAuth } from "../context/AuthContext";
+import LoginButton from "./Buttons/LoginButton";
+import SignupButton from "./Buttons/SingupButton";
 
 let jobRole = "Senior Supervisor";
 
 export default function Navbar() {
   const { user, loading, logout } = useAuth();
-  // console.log(user);
 
   if (loading) return null;
   return (
@@ -87,24 +88,29 @@ export default function Navbar() {
       </div>
 
       {/* Profile */}
-      <div className="flex justify-between hover:cursor-pointer hover:opacity-80">
-        <div className="flex flex-row gap-2 px-1 py-1 rounded-md">
-          <div className="flex items-center gap-2">
-            <img
-              src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/team-4.jpg"
-              alt="avatar"
-              className="inline-block object-cover object-center w-11 h-11 rounded-md"
-            />
-            <div>
-              <p className="font-sans antialiased text-base text-current">
-                {user.username}
-              </p>
-              <small className="font-sans antialiased text-sm text-stone-600">
-                {jobRole}
-              </small>
+      <div className="flex justify-between gap-2">
+        {user ? (
+          <div className="flex flex-row gap-2 px-1 py-1 rounded-md">
+            <div className="flex items-center gap-2">
+              <img
+                src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/team-4.jpg"
+                alt="avatar"
+                className="inline-block object-cover object-center w-11 h-11 rounded-md"
+              />
+              <div>
+                <p className="font-sans antialiased text-base text-current">
+                  {user.username}
+                </p>
+              </div>
             </div>
+            <button onClick={logout}>logout</button>
           </div>
-        </div>
+        ) : (
+          <div className="flex flex-row gap-2">
+            <LoginButton />
+            <SignupButton />
+          </div>
+        )}
       </div>
     </nav>
   );
