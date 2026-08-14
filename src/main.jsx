@@ -11,7 +11,7 @@ import Projects from "./pages/Projects.jsx";
 import Inpsections from "./pages/Inspections.jsx";
 import Reports from "./pages/Reports.jsx";
 import Vendors from "./pages/Vendors.jsx";
-import Navbar from "./components/Navbar.jsx";
+import Navbar from "./components/Navbar/Navbar.jsx";
 import { AuthProvider } from "./context/AuthContext.jsx";
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
 import ProjectView from "./pages/ProjectView.jsx";
