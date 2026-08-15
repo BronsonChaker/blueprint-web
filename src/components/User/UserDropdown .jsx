@@ -15,7 +15,7 @@ export default function UserDropdown() {
     setIsOpen(!isOpen);
   };
   return (
-    <button onClick={toggleDropdown} className="absolute top-2 right-3 inline-block text-left px-2 py-1 hover:cursor-pointer overflow-visible">
+    <button onClick={toggleDropdown} className="absolute top-2 right-5 inline-block text-left px-2 py-1 hover:cursor-pointer overflow-visible">
       <div className="flex flex-col gap-2 px-2 py-1.5 rounded-lg border-2 border-stone-100 bg-white">
         <div className="flex flex-col ">
 

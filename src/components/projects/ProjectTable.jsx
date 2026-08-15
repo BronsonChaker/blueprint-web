@@ -33,20 +33,20 @@ export default function ProjectTable({ jobCountData }) {
   return (
     <table className="w-full">
       <thead>
-        <tr className="border-t-2 border-border text-medium">
-          <th scope="col" className="p-2">
+        <tr className=" bg-gray-50 rounded-t-lg">
+          <th scope="col" className="px-5 py-1.5 text-start text-sm font-medium">
             Job No.
           </th>
-          <th scope="col" className="p-3">
+          <th scope="col" className="px-5 py-1.5 text-start text-sm font-medium">
             Address
           </th>
-          <th scope="col" className="p-3">
+          <th scope="col" className="px-5 py-1.5 text-start text-sm font-medium">
             Status
           </th>
-          <th scope="col" className="p-3">
+          <th scope="col" className="px-5 py-1.5 text-start text-sm font-medium">
             Stage
           </th>
-          <th scope="col" className="p-3">
+          <th scope="col" className="px-5 py-1.5 text-start text-sm font-medium">
             Supervisor
           </th>
         </tr>

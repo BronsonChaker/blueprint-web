@@ -16,12 +16,12 @@ export default function ProjectDetails() {
   return (
     <div className="w-full grid grid-cols-4 gap-4">
       {/* CUSTOMER DETAILS */}
-      <div className="col-span-2 bg-stone-50 shadow-sm rounded-lg">
-        <div className="flex flex-row items-center px-4 gap-4 bg-primary text-white py-2 rounded-t-lg h-10">
+      <div className="col-span-2 shadow-xs rounded-lg border border-stone-100 bg-white text-gray-700">
+        <div className="flex flex-row items-center px-4 gap-2 text-gray-700 bg-white py-2 rounded-t-lg h-10">
           <FaUser />
-          <span className="text-sm font-semibold">CUSTOMER DETAILS</span>
+          <span className="text-md font-semibold">Customer Details</span>
         </div>
-        <div className="w-full grid grid-cols-2 p-5 gap-5">
+        <div className="w-full grid grid-cols-2 px-5 gap-5 text-sm">
           <div className="flex flex-col col-span-1">
             <span className="font-semibold">Full Name</span>
             <span>{customerName}</span>
@@ -42,12 +42,12 @@ export default function ProjectDetails() {
       </div>
 
       {/* CONTRACT DETAILS */}
-      <div className=" col-span-2 bg-stone-50 shadow-sm rounded-lg">
-        <div className="flex flex-row items-center px-4 gap-4 bg-primary text-white py-2 rounded-t-lg h-10">
+      <div className="col-span-2 shadow-xs rounded-lg border border-stone-100 bg-white text-gray-700">
+        <div className="flex flex-row items-center px-4 gap-2 text-gray-700 bg-white py-2 rounded-t-lg h-10">
           <LiaFileContractSolid />
-          <span className="text-sm font-semibold">CONTRACT DETAILS</span>
+          <span className="text-md font-semibold">Contract Details</span>
         </div>
-        <div className="w-full grid grid-cols-2 p-5 gap-5">
+        <div className="w-full grid grid-cols-2 p-5 gap-5 text-sm">
           <div className="flex flex-col">
             <span className="font-semibold col-span-1">
               Contract Start Date
@@ -67,16 +67,16 @@ export default function ProjectDetails() {
       </div>
 
       {/* Financial Overview */}
-      <div className="col-span-4 bg-stone-100 shadow-md rounded-lg">
-        <div className="flex flex-row items-center px-4 gap-4 py-2 rounded-t-lg h-10">
+      <div className="col-span-4 shadow-xs rounded-lg border border-stone-100 bg-white text-gray-700">
+        <div className="flex flex-row items-center px-4 gap-2 text-gray-700 bg-white py-2 rounded-t-lg h-10">
           <AiOutlineStock className="" />
-          <span className="text-lg font-medium">Financialsi</span>
+          <span className="text-md font-semibold">Financial Overview</span>
         </div>
 
-        <div className="grid grid-cols-2 p-5 gap-5">
+        <div className="grid grid-cols-2 p-5 gap-5 text-sm">
           <div className="flex flex-col col-span-1">
             <span className="font-semibold">Total Contract Value</span>
-            <span className="text-xl font-bold text-green-700">
+            <span className="text-md">
               $758,240.48
             </span>
             <span className="text-xs">Incl. Variations</span>
@@ -84,8 +84,8 @@ export default function ProjectDetails() {
 
           <div className="flex flex-col col-span-1">
             <span className="font-semibold">Total ETS Spend</span>
-            <span className="text-xl font-bold text-amber-600">$25,000.00</span>
-            <span className="text-xs">3.2% Contract Value</span>
+            <span className="text-md">$25,000.00</span>
+            <span className="text-xs text-amber-600">3.2% Contract Value</span>
           </div>
 
           <div className="flex flex-col gap-1 col-span-1">

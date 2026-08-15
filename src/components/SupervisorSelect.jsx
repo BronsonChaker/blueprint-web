@@ -22,7 +22,7 @@ export default function SupervisorSelect({ onChange }) {
     setOption(value);
     onChange?.(value);
   };
-
+console.log(supervisors.map(s => s.id));
   return (
     <select
       name="selectedSupervsor"
@@ -34,7 +34,7 @@ export default function SupervisorSelect({ onChange }) {
       <option value="">Supervisor</option>
       {supervisors.map((supervisor) => {
         return (
-          <option value={supervisor.id} key={supervisor.id}>
+          <option value={supervisor.id} key={supervisor.user}>
             {supervisor.first_name} {supervisor.last_name}
           </option>
         );

@@ -15,13 +15,13 @@ export default function ProjectHeader({ address, jobNumber }) {
       <div className="flex flex-row gap-2 items-center ">
         <GiFamilyHouse className="text-5xl text-white bg-primary p-2 rounded-md" />
 
-        <span className="text-xl font-medium text-primary">
+        <span className="text-2xl font-medium text-primary">
           Job Number: {jobNumber}
         </span>
       </div>
       <div className="flex flex-row items-center gap-5">
-        <span className="flex items-center gap-2 text-subtext text-lg font-medium">
-          <FaLocationDot className="text-red-400" />
+        <span className="flex items-center gap-2 text-gray-700 text-sm font-medium">
+          <FaLocationDot className="text-red-800" />
           {address}
         </span>
 

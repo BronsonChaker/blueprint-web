@@ -8,7 +8,6 @@ import ProjectTasks from "./projects/ProjectTasks";
 import ProjectDocuments from "./projects/ProjectDocuments";
 import ProjectInspections from "./projects/ProjectInspections";
 import ProjectInsights from "./projects/ProjectInsights";
-import { CgDetailsMore } from "react-icons/cg";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;

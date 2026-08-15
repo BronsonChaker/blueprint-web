@@ -1,7 +1,7 @@
 import { IoMdAddCircle } from "react-icons/io";
 import ProjectTable from "../components/projects/ProjectTable";
 import { Link } from "react-router";
-// import SupervisorSelect from "../components/SupervisorSelect";
+import SupervisorSelect from "../components/SupervisorSelect";
 import { useState, useCallback } from "react";
 
 ("../api/endpoints/projects.js");
@@ -12,7 +12,6 @@ export default function Projects() {
   const getJobCount = useCallback((data) => {
       setJobCount(data);
     }, []);
-  console.log("hi")
   return (
     <div className="px-10 mt-10">
       <title>Project</title>
@@ -38,9 +37,9 @@ export default function Projects() {
         />
 
         {/* Supervisor Filter */}
-        {/* <div className="justify-center text-xs rounded-xl  outline-none">
+        <div className="justify-center text-xs rounded-xl  outline-none">
           <SupervisorSelect />
-        </div>*/}
+        </div>
 
         {/* Status Filter */}
         <div className="flex pl-2 justify-center border-2 text-xs border-border rounded-xl outline-none">

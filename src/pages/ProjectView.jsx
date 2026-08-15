@@ -25,7 +25,7 @@ export default function ProjectView() {
   if (!job) return <p>No job found.</p>;
 
   return (
-    <main className="px-20 h-screen">
+    <main className="px-10 h-screen overflow-scroll">
       <ProjectHeader address={job.address} jobNumber={job.job_number} />
       <ProjectContainer />
     </main>

@@ -18,11 +18,10 @@ const statusConfig = {
     classes: "bg-gray-100 text-gray-700 ring-gray-300",
   },
   [JobStatus.COMPLETED]: {
-    label: "COMPLETED",
+    label: "Completed",
     classes: "bg-green-100 text-green-700 ring-green-300",
   },
 };
-
 const defaultStatusStyle = {
   label: "Unknown",
   classes: "bg-gray-100 text-gray-700 ring-1 ring-gray-300",
