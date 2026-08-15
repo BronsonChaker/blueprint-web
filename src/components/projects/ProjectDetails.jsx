@@ -67,10 +67,10 @@ export default function ProjectDetails() {
       </div>
 
       {/* Financial Overview */}
-      <div className="col-span-4 bg-stone-50 shadow-sm rounded-lg">
-        <div className="flex flex-row items-center px-4 gap-4 bg-primary text-white py-2 rounded-t-lg h-10">
-          <AiOutlineStock />
-          <span className="text-sm font-semibold">FINANCIAL OVERVIEW</span>
+      <div className="col-span-4 bg-stone-100 shadow-md rounded-lg">
+        <div className="flex flex-row items-center px-4 gap-4 py-2 rounded-t-lg h-10">
+          <AiOutlineStock className="" />
+          <span className="text-lg font-medium">Financialsi</span>
         </div>
 
         <div className="grid grid-cols-2 p-5 gap-5">

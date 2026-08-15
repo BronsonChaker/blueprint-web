@@ -33,9 +33,9 @@ export async function getJobs() {
 //   }
 // }
 
-export async function createJob() {
-  const url = `${baseUrl}/create`;
-}
+// export async function createJob() {
+//   const url = `${baseUrl}/create`;
+// }
 
 export async function getSupervisors() {
   const url = `${baseUrl}/organisations/users`;

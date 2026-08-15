@@ -1,23 +1,27 @@
 import ProjectTableRow from "../projects/ProjectTableRow";
 import { getJobs } from "../../api/endpoints/projects";
-import { useEffect, useState } from "react";
+import { useEffect, useState} from "react";
 import { useNavigate } from "react-router";
 import {} from "react";
 
 export default function ProjectTable({ jobCountData }) {
   const [jobs, setJobs] = useState([]);
-  const [loading, isLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
+
+
   useEffect(() => {
     getJobs()
-      .then((data) => setJobs(data))
+      .then((data) => {
+        setJobs(data);
+        jobCountData(data.length);
+      })
       .catch((err) => setError(err.message))
-      .finally(() => isLoading(false));
-  }, []);
+      .finally(() => setLoading(false));
+  }, [jobCountData]);
 
-  jobCountData(jobs.length);
 
   const handleSelectJob = (jobId) => {
     navigate(`/jobs/${jobId}`);
@@ -29,8 +33,8 @@ export default function ProjectTable({ jobCountData }) {
   return (
     <table className="w-full">
       <thead>
-        <tr scope="row" className="border-t-2 border-border text-medium">
-          <th scope="col" className="p-3">
+        <tr className="border-t-2 border-border text-medium">
+          <th scope="col" className="p-2">
             Job No.
           </th>
           <th scope="col" className="p-3">

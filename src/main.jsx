@@ -11,39 +11,35 @@ import Projects from "./pages/Projects.jsx";
 import Inpsections from "./pages/Inspections.jsx";
 import Reports from "./pages/Reports.jsx";
 import Vendors from "./pages/Vendors.jsx";
-import Navbar from "./components/Navbar/Navbar.jsx";
 import { AuthProvider } from "./context/AuthContext.jsx";
-import ProtectedRoute from "./components/ProtectedRoute.jsx";
 import ProjectView from "./pages/ProjectView.jsx";
 import NewProject from "./pages/Projects/NewProject.jsx";
 import Test from "./pages/Text.jsx";
+import LayoutDefault from "./pages/Layout/LayoutDefault.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
       <AuthProvider>
-        <Navbar />
-        <Routes>
-          <Route index path="/" element={<App />} />
-          <Route element={<ProtectedRoute />}>
-            <Route path="/dashboard" element={<Dashboard />} />
-          </Route>
-
+        <Routes >
+          <Route path="/" element={<LayoutDefault children={<App/>} />}/>
+          <Route path="/dashboard" element={<LayoutDefault children={<Dashboard/>} />}/>
           {/* Auth Routes */}
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/forgotpassword" element={<ForgotPassword />} />
 
           {/* Main Routes */}
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/inspections" element={<Inpsections />} />
-          <Route path="/reports" element={<Reports />} />
-          <Route path="/vendors" element={<Vendors />} />
+          <Route path="/projects" element={<LayoutDefault children={<Projects/>} />}/>
+          <Route path="/inspections" element={<LayoutDefault children={<Inpsections/>} />}/>
+          <Route path="/reports" element={<LayoutDefault children={<Reports/>} />}/>
+          <Route path="/vendors" element={<LayoutDefault children={<Vendors/>} />}/>
 
           {/* Jobs Routes */}
-          <Route path="/jobs/:id" element={<ProjectView />} />
-          <Route path="/new-project" element={<NewProject />} />
-          <Route path="/test" element={<Test />} />
+          <Route path="/jobs/:id" element={<LayoutDefault children={<ProjectView/>} />}/>
+          <Route path="/new-project" element={<LayoutDefault children={<NewProject/>} />}/>
+          <Route path="/test" element={<LayoutDefault children={<Test/>} />}/>
+
         </Routes>
       </AuthProvider>
     </BrowserRouter>

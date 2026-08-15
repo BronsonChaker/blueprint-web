@@ -15,7 +15,7 @@ export default function ProjectHeader({ address, jobNumber }) {
       <div className="flex flex-row gap-2 items-center ">
         <GiFamilyHouse className="text-5xl text-white bg-primary p-2 rounded-md" />
 
-        <span className="text-3xl font-semibold text-primary">
+        <span className="text-xl font-medium text-primary">
           Job Number: {jobNumber}
         </span>
       </div>

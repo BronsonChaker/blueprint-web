@@ -6,4 +6,11 @@ import flowbiteReact from "flowbite-react/plugin/vite";
 
 export default defineConfig({
   plugins: [react(), tailwindcss(), flowbiteReact()],
+  server: {
+    watch: {
+      usePolling: true,
+      interval: 100,
+    },
+
+  },
 });

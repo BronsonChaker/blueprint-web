@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import { FaArrowRight } from "react-icons/fa";
 
@@ -26,19 +26,19 @@ export default function Login() {
     <div className="flex w-screen h-screen">
       <title>Login</title>
       {/*  */}
-      <div className="w-1/2 bg-primary flex justify-center flex-col px-20">
-        <h3 className="text-white text-6xl font-semibold">Blueprint</h3>
-        <p className="mt-4 text-stone-300 text-xl">
+      <div className="w-1/2 bg-primary flex justify-center flex-col px-20 ">
+        <h3 className="text-white text-3xl font-semibold">Blueprint</h3>
+        <p className="mt-3 text-stone-300 text-sm">
           Built by builders with industry knowledge and experience. Created to
           enhance operational efficiency and hit deadlines seamlessly.
         </p>
       </div>
 
       {/* Login Form */}
-      <div className="w-1/2 flex flex-col justify-center items-center p-30">
+      <div className="w-1/2 flex flex-col justify-center items-center p-30 text-sm">
         <div className="w-full">
-          <h1 className="text-primary text-5xl font-bold">Welcome Back</h1>
-          <p className="text-stone-600 text-lg">
+          <h1 className="text-primary text-2xl font-bold">Welcome Back</h1>
+          <p className="text-stone-600 text-sm">
             Access your organisation and start scheduling.
           </p>
         </div>
@@ -50,10 +50,10 @@ export default function Login() {
           {/* Email Address Input */}
           <div className="w-full flex flex-col">
             <label htmlFor="" className="font-medium">
-              USERNAME
+              Username
             </label>
             <input
-              className="rounded-sm outline-2 outline-stone-300 px-5 py-3 mt-1 shadow-md"
+              className="rounded-sm outline-2 outline-stone-300 px-3 py-2 mt-2 shadow-md"
               placeholder="Username"
               value={credentials.username}
               onChange={(e) =>
@@ -64,10 +64,10 @@ export default function Login() {
 
           {/* Password Input */}
 
-          <div className="w-full flex flex-col">
+          <div className="w-full flex flex-col text-sm">
             <div className="w-full flex justify-between">
               <label htmlFor="" className="font-medium">
-                PASSWORD
+                Password
               </label>
               <Link
                 to="/forgotpassword"
@@ -79,7 +79,7 @@ export default function Login() {
 
             <input
               type="password"
-              className="flex rounded-sm outline-2 outline-stone-300 px-5 py-3 mt-1 shadow-md"
+              className="flex rounded-sm outline-2 outline-stone-300 px-3 py-2 mt-2 shadow-md"
               placeholder="**************"
               value={credentials.password}
               onChange={(e) =>
@@ -100,13 +100,13 @@ export default function Login() {
 
           <button
             type="submit"
-            className="flex justify-center items-center bg-primary w-full py-4 rounded-md text-white cursor-pointer mt-5 gap-2 font-semibold text-xl hover:opacity-85 hover:cursor-pointer hover:duration-200"
+            className="flex justify-center items-center bg-primary w-full py-2 rounded-md text-sm text-white cursor-pointer mt-2 gap-2 font-semibold hover:opacity-85 hover:cursor-pointer hover:duration-200"
           >
             Sign In <FaArrowRight />
           </button>
         </form>
 
-        <div className="w-full flex flex-row gap-1.5 items-center justify-center text-lg mt-5">
+        <div className="w-full flex flex-row gap-1.5 items-center justify-center text-sm mt-5">
           <p>Don't have an account?</p>
           <Link
             to="/register"

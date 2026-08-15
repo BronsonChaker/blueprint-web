@@ -1,27 +1,27 @@
 import { IoMdAddCircle } from "react-icons/io";
 import ProjectTable from "../components/projects/ProjectTable";
 import { Link } from "react-router";
-import SupervisorSelect from "../components/SupervisorSelect";
-import { useState } from "react";
+// import SupervisorSelect from "../components/SupervisorSelect";
+import { useState, useCallback } from "react";
 
 ("../api/endpoints/projects.js");
 
 export default function Projects() {
   const [jobCount, setJobCount] = useState("");
 
-  function getJobCount(data) {
-    setJobCount(data);
-  }
-
+  const getJobCount = useCallback((data) => {
+      setJobCount(data);
+    }, []);
+  console.log("hi")
   return (
-    <div className="px-20 mt-10 h-screen w-full">
-      <title>Projects</title>
+    <div className="px-10 mt-10">
+      <title>Project</title>
       {/* Top Header/Card Section */}
       <div className="w-full flex flex-row">
         {/* Main Header */}
         <div className="w-1/2">
-          <h1 className="font-bold text-primary text-4xl">Projects</h1>
-          <p className="text-lg text-subtext mt-2">
+          <h1 className="font-bold text-primary text-2xl">Projects</h1>
+          <p className="text-sm text-subtext mt-2">
             You are assigned {jobCount} projects. Select a project to view
             schedule and additonal information.
           </p>
@@ -34,16 +34,16 @@ export default function Projects() {
           type="search"
           name="project_search"
           placeholder="Search by ID or Address"
-          className="w-100 border-2 border-border rounded-xl px-2.5 py-2.5 outline-none"
+          className="w-100 border-2 border-border text-xs rounded-xl px-2.5 py-1.5 outline-none"
         />
 
         {/* Supervisor Filter */}
-        <div className="justify-center border-2 text-lg border-border rounded-xl px-2.5 py-2.5 outline-none">
+        {/* <div className="justify-center text-xs rounded-xl  outline-none">
           <SupervisorSelect />
-        </div>
+        </div>*/}
 
         {/* Status Filter */}
-        <div className="justify-center border-2 text-lg border-border rounded-xl px-2.5 py-2.5 outline-none">
+        <div className="flex pl-2 justify-center border-2 text-xs border-border rounded-xl outline-none">
           <select
             name="selectedSupervsor"
             id="supervisorSelect"
@@ -58,7 +58,7 @@ export default function Projects() {
         </div>
 
         {/* Stage Filter */}
-        <div className="justify-center border-2 text-lg border-border rounded-xl px-2.5 py-2.5 outline-none">
+        <div className="flex pl-2 justify-center border-2 text-xs border-border rounded-xl outline-none">
           <select
             name="selectedSupervsor"
             id="supervisorSelect"
@@ -78,7 +78,7 @@ export default function Projects() {
 
         <Link
           to="/new-project"
-          className="flex flex-row items-center gap-1 text-lg bg-primary text-white px-2 rounded-xl hover:opacity-90 hover:duration-300 hover:cursor-pointer"
+          className="flex flex-row items-center gap-1 text-xs bg-primary text-white px-2 rounded-xl hover:opacity-90 hover:duration-300 hover:cursor-pointer"
         >
           {" "}
           <IoMdAddCircle />

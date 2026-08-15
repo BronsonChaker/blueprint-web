@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 @import "tailwindcss";
-
-@import "flowbite-react/plugin/tailwindcss";
 @source "../.flowbite-react/class-list.json";
+@import "flowbite-react/plugin/tailwindcss";
+
 
 @theme {
   --color-primary: #1a365d;
@@ -10,19 +11,25 @@
   --color-neutral: #f7fafc;
   --color-subtext: #696969;
   --color-border: #eef1f3;
-  --font-heading: "Inter", sans-serif;
-  --font-body: "Inter", sans-serif;
 }
 
-/* * {
-  font-family: "JetBrains Mono", monospace;
-} */
+@utility hover-bg {
+    @apply hover:bg-gray-100 hover:cursor-pointer hover:transition hover:duration-200
+}
+@utility hover-underline {
+    @apply hover:cursor-pointer hover:transition hover:duration-200 hover:underline
+}
+
+* {
+    font-family: "Manrope", sans-serif;
+}
 
 a.active {
   color: #1a365d;
   font-weight: 600;
-  text-decoration: underline;
+  /*text-decoration: underline;*/
   text-decoration-thickness: 2px;
   text-underline-offset: 10px;
   text-decoration-color: #1a365d;
+
 }

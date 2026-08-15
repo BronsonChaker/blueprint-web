@@ -27,7 +27,7 @@ export default function SupervisorSelect({ onChange }) {
     <select
       name="selectedSupervsor"
       id="supervisorSelect"
-      className="text-sm px-1 py-2 border border-stone-300 rounded-md"
+      className="flex pl-2 justify-center border-2 text-xs border-border rounded-xl outline-none py-2"
       value={option}
       onChange={handleChange}
     >

@@ -11,16 +11,16 @@ export default function ProjectListItem({
   return (
     <tr
       onClick={onSelect}
-      className="hover:cursor-pointer hover:bg-gray-100 border-t-2 border-b-2 border-border"
+      className="hover:cursor-pointer hover:bg-gray-100 border-t-2 border-b-2 border-border text-xs"
     >
-      <th scope="row" className="p-5">
+      <th scope="" className="p-5">
         {jobNumber}
       </th>
-      <td className="p-5 uppercase">{address}</td>
-      <td className="p-5 uppercase text-center">
+      <td scope="row" className="p-5">{address}</td>
+      <td className="p-5 text-center">
         <ProjectStatusBadge status={status} />
       </td>
-      <td className="p-5 capitalize text-center">{stage}</td>
+      <td className="p-5 text-center capitalize">{stage}</td>
       <td className="p-5 text-center">{supervisor}</td>
     </tr>
   );
