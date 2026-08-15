@@ -1,5 +1,5 @@
 import { IoMdAddCircle } from "react-icons/io";
-import ProjectTable from "../components/projects/ProjectTable";
+import ProjectTable from "../components/Projects/ProjectTable";
 import { Link } from "react-router";
 import SupervisorSelect from "../components/SupervisorSelect";
 import { useState, useCallback } from "react";

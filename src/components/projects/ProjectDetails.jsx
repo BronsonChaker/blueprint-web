@@ -16,7 +16,7 @@ export default function ProjectDetails() {
   return (
     <div className="w-full grid grid-cols-4 gap-4">
       {/* CUSTOMER DETAILS */}
-      <div className="col-span-2 shadow-xs rounded-lg border border-stone-100 bg-white text-gray-700">
+      <div className="col-span-2 shadow-sm rounded-lg border border-stone-100 bg-white text-gray-700">
         <div className="flex flex-row items-center px-4 gap-2 text-gray-700 bg-white py-2 rounded-t-lg h-10">
           <FaUser />
           <span className="text-md font-semibold">Customer Details</span>
@@ -42,7 +42,7 @@ export default function ProjectDetails() {
       </div>
 
       {/* CONTRACT DETAILS */}
-      <div className="col-span-2 shadow-xs rounded-lg border border-stone-100 bg-white text-gray-700">
+      <div className="col-span-2 shadow-sm rounded-lg border border-stone-100 bg-white text-gray-700">
         <div className="flex flex-row items-center px-4 gap-2 text-gray-700 bg-white py-2 rounded-t-lg h-10">
           <LiaFileContractSolid />
           <span className="text-md font-semibold">Contract Details</span>
@@ -67,7 +67,7 @@ export default function ProjectDetails() {
       </div>
 
       {/* Financial Overview */}
-      <div className="col-span-4 shadow-xs rounded-lg border border-stone-100 bg-white text-gray-700">
+      <div className="col-span-4 shadow-sm rounded-lg border border-stone-100 bg-white text-gray-700">
         <div className="flex flex-row items-center px-4 gap-2 text-gray-700 bg-white py-2 rounded-t-lg h-10">
           <AiOutlineStock className="" />
           <span className="text-md font-semibold">Financial Overview</span>
