@@ -1,4 +1,4 @@
-import ProjectTableRow from "../projects/ProjectTableRow";
+import ProjectTableRow from "./ProjectTableRow";
 import { getJobs } from "../../api/endpoints/projects";
 import { useEffect, useState} from "react";
 import { useNavigate } from "react-router";

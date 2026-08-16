@@ -49,7 +49,7 @@ export default function Navbar() {
       {user ? (
         <UserDropdown/>
       ) : (
-        <div className="flex flex-row gap-2">
+        <div className="absolute top-5 right-10 flex flex-row gap-2">
           <LoginButton />
           <SignupButton />
         </div>
