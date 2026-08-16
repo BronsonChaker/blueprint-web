@@ -3,11 +3,13 @@ import ProjectTable from "../components/Projects/ProjectTable";
 import { Link } from "react-router";
 import SupervisorSelect from "../components/SupervisorSelect";
 import { useState, useCallback } from "react";
+import SearchBar from "../components/UI/SearchBar";
 
 ("../api/endpoints/projects.js");
 
 export default function Projects() {
   const [jobCount, setJobCount] = useState("");
+  const [query, setQuery] = useState("");
 
   const getJobCount = useCallback((data) => {
       setJobCount(data);
@@ -29,16 +31,11 @@ export default function Projects() {
 
       {/* Search Filter & Buttons */}
       <div className="mt-2 flex flex-row gap-2">
-        <input
-          type="search"
-          name="project_search"
-          placeholder="Search by ID or Address"
-          className="w-100 border-2 border-border text-xs rounded-xl px-2.5 py-1.5 outline-none"
-        />
+        <SearchBar query={query} setQuery={setQuery}/>
 
         {/* Supervisor Filter */}
         <div className="justify-center text-xs rounded-xl  outline-none">
-          <SupervisorSelect />
+          <SupervisorSelect query={query} setQuery={setQuery}/>
         </div>
 
         {/* Status Filter */}
@@ -87,7 +84,7 @@ export default function Projects() {
 
       {/* Project Table Section */}
       <div className="w-full mt-4">
-        <ProjectTable jobCountData={getJobCount} />
+        <ProjectTable jobCountData={getJobCount} query={query} />
       </div>
     </div>
   );

@@ -4,12 +4,19 @@ import { useEffect, useState} from "react";
 import { useNavigate } from "react-router";
 import {} from "react";
 
-export default function ProjectTable({ jobCountData }) {
+export default function ProjectTable({ jobCountData, query }) {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
+  const filteredJobs = jobs.filter((job) => {
+    const search = query.toLowerCase();
+    return (
+      job.job_number?.toLowerCase().includes(search) ||
+      job.address?.toLowerCase().includes(search)
+    );
+  })
 
 
   useEffect(() => {
@@ -52,7 +59,7 @@ export default function ProjectTable({ jobCountData }) {
         </tr>
       </thead>
       <tbody>
-        {jobs.map((job) => (
+        {filteredJobs.map((job) => (
           <ProjectTableRow
             key={job.id}
             jobNumber={job.job_number}
