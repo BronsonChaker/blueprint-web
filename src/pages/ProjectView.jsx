@@ -26,6 +26,7 @@ export default function ProjectView() {
 
   return (
     <main className="px-10 h-screen overflow-scroll">
+      <title>{job.address}</title>
       <ProjectHeader address={job.address} jobNumber={job.job_number} />
       <ProjectContainer />
     </main>

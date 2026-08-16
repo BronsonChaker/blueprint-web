@@ -148,7 +148,7 @@ export default function ProjectDetails() {
       <div className="col-span-2 shadow-sm rounded-lg border border-stone-100 bg-white text-gray-700">
         <div className="flex flex-row items-center px-4 gap-2 text-gray-700 bg-white py-2 rounded-t-lg h-10">
           <RxActivityLog />
-          <span className="text-sm font-semibold">PROJECT ACTIVITY </span>
+          <span className="text-sm font-semibold">Project Activity</span>
         </div>
       </div>
     </div>

@@ -8,16 +8,12 @@ export default function ProjectTasks() {
   const [error, setError] = useState(null);
   const params = useParams();
 
-  console.log(params.id);
-
   useEffect(() => {
     getProjectTasks(params.id)
       .then((data) => setTasks(data))
       .catch((err) => setError(err.message))
       .finally(() => isLoading(false));
   }, [params.id]);
-
-  console.log(tasks);
 
   if (loading) return <p>Loading ...</p>;
   if (error) return <p>Error: {error}</p>;
