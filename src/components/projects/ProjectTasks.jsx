@@ -2,11 +2,13 @@ import { useState, useEffect } from "react";
 import { getProjectTasks } from "../../api/endpoints/projects";
 import { useParams } from "react-router";
 import ProjectTasksRow from "./ProjectTasksRow";
+import TaskSidebar from "../Tasks/TaskSidebar";
 export default function ProjectTasks() {
   const [tasks, setTasks] = useState([]);
   const [loading, isLoading] = useState(true);
   const [error, setError] = useState(null);
   const params = useParams();
+  const [taskSidebar, openTaskSidebar] = useState(false)
 
   useEffect(() => {
     getProjectTasks(params.id)
@@ -14,6 +16,10 @@ export default function ProjectTasks() {
       .catch((err) => setError(err.message))
       .finally(() => isLoading(false));
   }, [params.id]);
+
+  const handleSelectTasks = () => {
+    openTaskSidebar(true)
+}
 
   if (loading) return <p>Loading ...</p>;
   if (error) return <p>Error: {error}</p>;
@@ -48,10 +54,12 @@ export default function ProjectTasks() {
               scheduledDate={task.booking_date}
               completedDate={task.completion_date}
               duration={"1 Day"}
+              onSelect={handleSelectTasks}
             />
           ))}
         </tbody>
       </table>
+      <TaskSidebar open={taskSidebar} />
     </div>
   );
 }
