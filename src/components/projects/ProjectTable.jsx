@@ -18,7 +18,6 @@ export default function ProjectTable({ jobCountData, query }) {
     );
   })
 
-
   useEffect(() => {
     getJobs()
       .then((data) => {
@@ -40,20 +39,20 @@ export default function ProjectTable({ jobCountData, query }) {
   return (
     <table className="w-full">
       <thead>
-        <tr className=" bg-gray-50 rounded-t-lg">
-          <th scope="col" className="px-5 py-1.5 text-start text-sm font-medium">
+        <tr className="bg-gray-50 rounded-t-lg">
+          <th scope="col" className="table-header">
             Job No.
           </th>
-          <th scope="col" className="px-5 py-1.5 text-start text-sm font-medium">
+          <th scope="col" className="table-header">
             Address
           </th>
-          <th scope="col" className="px-5 py-1.5 text-start text-sm font-medium">
+          <th scope="col" className="table-header">
             Status
           </th>
-          <th scope="col" className="px-5 py-1.5 text-start text-sm font-medium">
+          <th scope="col" className="table-header">
             Stage
           </th>
-          <th scope="col" className="px-5 py-1.5 text-start text-sm font-medium">
+          <th scope="col" className="table-header">
             Supervisor
           </th>
         </tr>

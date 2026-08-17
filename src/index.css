@@ -20,6 +20,20 @@
     @apply hover:cursor-pointer hover:transition hover:duration-200 hover:underline
 }
 
+@utility table-header {
+    @apply px-5 py-1.5 text-start text-sm font-medium
+}
+
+@utility completed-task {
+    @apply hover:cursor-pointer hover:opacity-80  border-b border-border text-sm bg-green-200
+}
+
+@utility incomplete-task {
+    @apply hover:cursor-pointer hover:bg-gray-100  border-b border-border text-sm
+}
+
+
+
 * {
     font-family: "Manrope", sans-serif;
 }

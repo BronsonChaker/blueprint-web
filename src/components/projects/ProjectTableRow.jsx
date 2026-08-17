@@ -9,7 +9,7 @@ export default function ProjectListItem({
 }) {
   return (
     <tr onClick={onSelect}
-      className="hover:cursor-pointer hover:bg-gray-100  border-b border-border text-sm">
+      className="hover:cursor-pointer hover:bg-gray-100  border-b border-border text-sm" >
     <td scope="col" className="p-5">{jobNumber}</td>
     <td scope="col" className="p-5">{address}</td>
     <td scope="col" className="p-5"> <ProjectStatusBadge status={status} />  </td>

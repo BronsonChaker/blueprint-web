@@ -4,7 +4,7 @@ export default function SearchBar({query, setQuery}) {
       <input
         type="text"
         value={query}
-        onChange={(e) => setQuery(e.target.value)}
+        onChange={(event) => setQuery(event.target.value)}
         placeholder="Search by ID or Address"
         className="w-100 border-2 border-border text-xs rounded-xl px-2.5 py-1.5 outline-none"
 

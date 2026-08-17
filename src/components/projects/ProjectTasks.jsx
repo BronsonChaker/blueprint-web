@@ -21,20 +21,20 @@ export default function ProjectTasks() {
     <div>
       <table className="w-full">
         <thead>
-          <tr scope="row" className=" border-border text-center text-sm">
-            <th scope="col" className="">
+          <tr className="bg-gray-50 rounded-t-lg">
+            <th scope="col" className="table-header">
               Task Name
             </th>
-            <th scope="col" className="">
+            <th scope="col" className="table-header">
               Vendor
             </th>
-            <th scope="col" className="">
+            <th scope="col" className="table-header">
               Scheduled Date
             </th>
-            <th scope="col" className="">
+            <th scope="col" className="table-header">
               Completed Date
             </th>
-            <th scope="col" className="">
+            <th scope="col" className="table-header">
               Actions
             </th>
           </tr>
