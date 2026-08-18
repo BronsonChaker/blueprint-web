@@ -15,7 +15,7 @@ export default function UserDropdown() {
     setIsOpen(!isOpen);
   };
   return (
-    <button onClick={toggleDropdown} className="absolute top-2 right-5 inline-block text-left px-2 py-1 hover:cursor-pointer overflow-visible">
+    <div onClick={toggleDropdown} className="absolute top-2 right-5 inline-block text-left px-2 py-1 hover:cursor-pointer overflow-visible ">
       <div className="flex flex-col gap-2 px-2 py-1.5 rounded-lg border-2 border-stone-100 bg-white">
         <div className="flex flex-col ">
 
@@ -33,24 +33,26 @@ export default function UserDropdown() {
           </div>
 
 
-          {isOpen && (
-            <div className="origin-top right-0 rounded-sm w-full mt-3 duration-300">
-              <ul className="flex gap-1 flex-col text-xs w-full">
 
-                <li className=""><Link to="/user" className="flex flex-row gap-1 rounded-md items-center hover-bg px-1.5 py-1"><FaUser className="text-md text-gray-700"/><span className="text-xs font-medium text-gray-700">Profile</span></Link></li>
-                <li className=""><Link to="/user" className="flex flex-row gap-1 rounded-md items-center hover-bg px-1.5 py-1"><FaCreditCard className="text-md text-gray-700"/><span className="text-xs font-medium text-gray-700">Subscription</span></Link></li>
-                <li className=""><Link to="/user" className="flex flex-row gap-1 rounded-md items-center hover-bg px-1.5 py-1"><IoIosSettings className="text-kg text-gray-700"/><span className="text-xs font-medium text-gray-700">Settings</span></Link></li>
-                <li className=""><Link to="/user" className="flex flex-row gap-1 rounded-md items-center hover-bg px-1.5 py-1"><BiSolidError className="text-md text-gray-700"/><span className="text-xs font-medium text-gray-700">Suppport</span></Link></li>
-                <li className=""><button onClick={logout} className="flex flex-row gap-1 rounded-md items-center hover-bg px-1.5 py-1 w-full"><MdOutlineLogout className="text-md text-gray-700"/><span className="text-xs font-medium text-gray-700">Sign Out</span></button></li>
-              </ul>
+          <div className={`w-full absolute right-0 top-10 mt-3 rounded-sm border-2 border-stone-100 bg-white shadow-md
+                    transition-all duration-200 ease-in-out
+                    ${isOpen ? "opacity-100 scale-100 translate-y-0 pointer-events-auto" : "opacity-0 scale-95 -translate-y-1 pointer-events-none"}`}>
+            <ul className="flex gap-1 flex-col text-xs w-full">
 
-            </div>
-          )}
+              <li className=""><Link to="/user" className="flex flex-row gap-1 rounded-md items-center hover-bg px-1.5 py-1"><FaUser className="text-md text-gray-700"/><span className="text-xs font-medium text-gray-700">Profile</span></Link></li>
+              <li className=""><Link to="/user" className="flex flex-row gap-1 rounded-md items-center hover-bg px-1.5 py-1"><FaCreditCard className="text-md text-gray-700"/><span className="text-xs font-medium text-gray-700">Subscription</span></Link></li>
+              <li className=""><Link to="/user" className="flex flex-row gap-1 rounded-md items-center hover-bg px-1.5 py-1"><IoIosSettings className="text-kg text-gray-700"/><span className="text-xs font-medium text-gray-700">Settings</span></Link></li>
+              <li className=""><Link to="/user" className="flex flex-row gap-1 rounded-md items-center hover-bg px-1.5 py-1"><BiSolidError className="text-md text-gray-700"/><span className="text-xs font-medium text-gray-700">Suppport</span></Link></li>
+              <li className=""><button onClick={logout} className="flex flex-row gap-1 rounded-md items-center hover-bg px-1.5 py-1 w-full"><MdOutlineLogout className="text-md text-gray-700"/><span className="text-xs font-medium text-gray-700">Sign Out</span></button></li>
+            </ul>
+
+          </div>
+
         </div>
 
 
 
       </div>
-    </button>
+    </div>
   );
 }

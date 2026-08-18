@@ -32,6 +32,10 @@
     @apply hover:cursor-pointer hover:bg-gray-100  border-b border-border text-sm
 }
 
+@utility button {
+    @apply hover:opacity-80 px-4 py-1.5 border bg-primary text-white rounded-md
+}
+
 
 
 * {

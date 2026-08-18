@@ -31,7 +31,7 @@ export default function Projects() {
 
       {/* Search Filter & Buttons */}
       <div className="mt-2 flex flex-row gap-2">
-        <SearchBar query={query} setQuery={setQuery}/>
+        <SearchBar placeholder="Search by ID or Address" query={query} setQuery={setQuery}/>
 
         {/* Supervisor Filter */}
         <div className="justify-center text-xs rounded-xl  outline-none">

@@ -3,11 +3,11 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 import * as React from "react";
-import ProjectDetails from "./projects/ProjectDetails";
-import ProjectTasks from "./projects/ProjectTasks";
-import ProjectDocuments from "./projects/ProjectDocuments";
-import ProjectInspections from "./projects/ProjectInspections";
-import ProjectInsights from "./projects/ProjectInsights";
+import ProjectDetails from "./Projects/ProjectDetails";
+import ProjectTasks from "./Projects/ProjectTasks";
+import ProjectDocuments from "./Projects/ProjectDocuments";
+import ProjectInspections from "./Projects/ProjectInspections";
+import ProjectInsights from "./Projects/ProjectInsights";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -69,7 +69,7 @@ export default function BasicTabs() {
         <ProjectDetails />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        <ProjectTasks />
+        <ProjectTasks/>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
         <ProjectDocuments />
