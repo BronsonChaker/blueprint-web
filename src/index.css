@@ -40,6 +40,18 @@
     @apply w-full border-2 border-border text-sm rounded-xl px-2.5 py-2 outline-none
 }
 
+@utility card-outline {
+    @apply shadow-sm rounded-lg border border-stone-100 bg-white text-gray-700
+}
+
+@utility text-heading {
+    @apply font-bold text-primary text-2xl
+}
+
+@utility text-page-desc {
+    @apply text-sm text-subtext mt-2
+}
+
 @utility column {
     @apply flex flex-col
 }

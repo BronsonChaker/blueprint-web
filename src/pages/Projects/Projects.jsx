@@ -1,9 +1,9 @@
 import { IoMdAddCircle } from "react-icons/io";
-import ProjectTable from "../components/Projects/ProjectTable";
+import ProjectTable from "../../components/Projects/ProjectTable";
 import { Link } from "react-router";
-import SupervisorSelect from "../components/SupervisorSelect";
+import SupervisorSelect from "../../components/SupervisorSelect";
 import { useState, useCallback } from "react";
-import SearchBar from "../components/UI/SearchBar";
+import SearchBar from "../../components/UI/SearchBar";
 
 ("../api/endpoints/projects.js");
 
@@ -21,8 +21,8 @@ export default function Projects() {
       <div className="w-full flex flex-row">
         {/* Main Header */}
         <div className="w-1/2">
-          <h1 className="font-bold text-primary text-2xl">Projects</h1>
-          <p className="text-sm text-subtext mt-2">
+          <h1 className="text-heading">Projects</h1>
+          <p className="text-page-desc">
             You are assigned {jobCount} projects. Select a project to view
             schedule and additonal information.
           </p>

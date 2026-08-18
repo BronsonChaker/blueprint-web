@@ -1,8 +1,6 @@
 import { IoMdClose } from "react-icons/io";
 
 export default function TaskSidebar({ selectedTask, taskSidebar, onClose }) {
-
-  console.log(selectedTask)
   return (
     <div className={`w-4/12 fixed right-0 top-0 h-screen bg-white border-l-2 border-stone-200 px-10 py-10
             transition-transform duration-300 ease-in-out flex flex-col gap-5
