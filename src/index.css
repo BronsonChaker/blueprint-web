@@ -36,7 +36,17 @@
     @apply hover:opacity-80 px-4 py-1.5 border bg-primary text-white rounded-md
 }
 
+@utility input {
+    @apply w-full border-2 border-border text-sm rounded-xl px-2.5 py-2 outline-none
+}
 
+@utility column {
+    @apply flex flex-col
+}
+
+@utility row {
+    @apply flex flex-row
+}
 
 * {
     font-family: "Manrope", sans-serif;
