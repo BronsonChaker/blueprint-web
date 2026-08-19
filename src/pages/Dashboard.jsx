@@ -1,3 +1,6 @@
+import DashboardCard from "../components/Dashboard/DashboardCard";
+import { GiFamilyHouse } from "react-icons/gi";
+
 export default function Dashboard() {
   return (
     <div className="px-20">
@@ -10,10 +13,16 @@ export default function Dashboard() {
       </div>
       <div className="grid grid-cols-4 mt-5">
         <div className="row col-span-4 justify-between gap-5">
-          <div className="card-outline h-35 w-full">1</div>
-          <div className="card-outline h-35 w-full">2</div>
-          <div className="card-outline h-35 w-full">3</div>
-          <div className="card-outline h-35 w-full">4</div>
+          <DashboardCard
+            link="/projects"
+            title="Active Projects"
+            icon={<GiFamilyHouse />}
+            value={"24"}
+            insight={"-5 this month"}
+          />
+          <DashboardCard />
+          <DashboardCard />
+          <DashboardCard />
         </div>
       </div>
     </div>

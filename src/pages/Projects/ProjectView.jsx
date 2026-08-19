@@ -1,8 +1,8 @@
-import { viewProject } from "../api/endpoints/projects";
+import { viewProject } from "../../api/endpoints/projects";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import ProjectHeader from "../components/Projects/ProjectHeader";
-import ProjectContainer from "../components/Projects/ProjectContainer";
+import ProjectHeader from "../../components/Projects/ProjectHeader";
+import ProjectContainer from "../../components/Projects/ProjectContainer";
 
 export default function ProjectView() {
   const [job, setJob] = useState(null);
