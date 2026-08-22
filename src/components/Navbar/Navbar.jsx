@@ -12,57 +12,78 @@ import SignupButton from "../Buttons/SingupButton";
 import NavbarItem from "./NavbarItem";
 import UserDropdown from "../User/UserDropdown ";
 import { IoCalendarOutline } from "react-icons/io5";
+import { GoSidebarExpand } from "react-icons/go";
+import { useState } from "react";
 
 export default function Navbar() {
   const { user, loading } = useAuth();
+  const { expandSidebar, setExpandSidebar } = useState(false);
 
   if (loading) return null;
   return (
-    <nav className="h-screen w-2/12 text-md py-5 ml-5 flex flex-col items-start justify-start border-r-2 border-stone-200">
+    <nav className="h-screen w-60 text-md py-5 px-5 flex flex-col items-center justify-between border-r-2 border-stone-200">
       {/* Logo */}
-
-      <div>
-        <Link to="">
-          <span className="font-bold text-2xl text-primary p-2">Blueprint</span>
-        </Link>
-      </div>
-      {/* Links */}
-
-      <div className="flex flex-col font-medium text-gray-800 text-lg gap-2 items-start mt-2 w-full">
-        <NavbarItem name="Dashboard" route="dashboard" icon={<MdDashboard />} />
-        <NavbarItem name="Projects" route="projects" icon={<LuHouse />} />
-        <NavbarItem
-          name="Inspections"
-          route="inspections"
-          icon={<FaMagnifyingGlass />}
-        />
-        <NavbarItem
-          name="Calendar"
-          route="calendar"
-          icon={<IoCalendarOutline />}
-        />
-        <NavbarItem name="Checklist" route="checklist" icon={<GoChecklist />} />
-        <NavbarItem name="Vendors" route="vendors" icon={<GrUserWorker />} />
-        <NavbarItem
-          name="Reports"
-          route="reports"
-          icon={<HiOutlineDocumentReport />}
-        />
-        <NavbarItem
-          name="Organisation"
-          route="organisation"
-          icon={<CgOrganisation />}
-        />
-      </div>
-
-      {user ? (
-        <UserDropdown />
-      ) : (
-        <div className="absolute top-5 right-10 flex flex-row gap-2">
-          <LoginButton />
-          <SignupButton />
+      <div className="w-full">
+        <div className="row justify-between items-center w-full">
+          <div>
+            <Link to="">
+              <span className="font-bold text-2xl text-primary p-2">
+                Blueprint
+              </span>
+            </Link>
+          </div>
+          <div className="">
+            <GoSidebarExpand className="text-3xl rounded p-1 hc" />
+          </div>
         </div>
-      )}
+        {/* Links */}
+
+        <div className="flex flex-col font-medium text-gray-800 text-lg gap-2 items-start mt-2 w-full">
+          <NavbarItem
+            name="Dashboard"
+            route="dashboard"
+            icon={<MdDashboard />}
+          />
+          <NavbarItem name="Projects" route="projects" icon={<LuHouse />} />
+          <NavbarItem
+            name="Inspections"
+            route="inspections"
+            icon={<FaMagnifyingGlass />}
+          />
+          <NavbarItem
+            name="Calendar"
+            route="calendar"
+            icon={<IoCalendarOutline />}
+          />
+          <NavbarItem
+            name="Checklist"
+            route="checklist"
+            icon={<GoChecklist />}
+          />
+          <NavbarItem name="Vendors" route="vendors" icon={<GrUserWorker />} />
+          <NavbarItem
+            name="Reports"
+            route="reports"
+            icon={<HiOutlineDocumentReport />}
+          />
+          <NavbarItem
+            name="Organisation"
+            route="organisation"
+            icon={<CgOrganisation />}
+          />
+        </div>
+      </div>
+
+      <div className="w-full">
+        {user ? (
+          <UserDropdown />
+        ) : (
+          <div className="w-full row items-center gap-2 justify-center">
+            <LoginButton />
+            <SignupButton />
+          </div>
+        )}
+      </div>
     </nav>
   );
 }

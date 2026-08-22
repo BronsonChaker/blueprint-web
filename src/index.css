@@ -1,8 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
 @import "tailwindcss";
 @source "../.flowbite-react/class-list.json";
 @import "flowbite-react/plugin/tailwindcss";
-
 
 @theme {
   --color-primary: #1a365d;
@@ -14,54 +13,58 @@
 }
 
 @utility hover-bg {
-    @apply hover:bg-gray-100 hover:cursor-pointer hover:transition hover:duration-200
+  @apply hover:bg-gray-100 hover:cursor-pointer hover:transition hover:duration-200;
 }
 @utility hover-underline {
-    @apply hover:cursor-pointer hover:transition hover:duration-200 hover:underline
+  @apply hover:cursor-pointer hover:transition hover:duration-200 hover:underline;
 }
 
 @utility table-header {
-    @apply px-5 py-1.5 text-start text-sm font-medium
+  @apply px-5 py-1.5 text-start text-sm font-medium;
 }
 
 @utility completed-task {
-    @apply hover:cursor-pointer hover:opacity-80  border-b border-border text-sm bg-green-200
+  @apply hover:cursor-pointer hover:opacity-80  border-b border-border text-sm bg-green-200;
 }
 
 @utility incomplete-task {
-    @apply hover:cursor-pointer hover:bg-gray-100  border-b border-border text-sm
+  @apply hover:cursor-pointer hover:bg-gray-100  border-b border-border text-sm;
 }
 
 @utility button {
-    @apply hover:opacity-80 px-4 py-1.5 border bg-primary text-white rounded-md
+  @apply hover:opacity-80 px-4 py-1.5 border bg-primary text-white rounded-md;
 }
 
 @utility input {
-    @apply w-full border-2 border-border text-sm rounded-xl px-2.5 py-2 outline-none
+  @apply w-full border-2 border-border text-sm rounded-xl px-2.5 py-2 outline-none;
 }
 
 @utility card-outline {
-    @apply shadow-sm rounded-lg border border-stone-100 bg-white text-gray-700
+  @apply shadow-sm rounded-lg border border-stone-100 bg-white text-gray-700;
 }
 
 @utility text-heading {
-    @apply font-bold text-primary text-2xl
+  @apply font-bold text-primary text-2xl;
 }
 
 @utility text-page-desc {
-    @apply text-sm text-subtext mt-2
+  @apply text-sm text-subtext mt-2;
 }
 
 @utility column {
-    @apply flex flex-col
+  @apply flex flex-col;
 }
 
 @utility row {
-    @apply flex flex-row
+  @apply flex flex-row;
+}
+
+@utility hc {
+  @apply hover:cursor-pointer hover:bg-stone-100 transition duration-300;
 }
 
 * {
-    font-family: "Manrope", sans-serif;
+  font-family: "Manrope", sans-serif;
 }
 
 a.active {
@@ -71,5 +74,4 @@ a.active {
   text-decoration-thickness: 2px;
   text-underline-offset: 10px;
   text-decoration-color: #1a365d;
-
 }
