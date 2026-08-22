@@ -1,4 +1,4 @@
-import { Link} from "react-router";
+import { Link } from "react-router";
 import { GoChecklist } from "react-icons/go";
 import { GrUserWorker } from "react-icons/gr";
 import { HiOutlineDocumentReport } from "react-icons/hi";
@@ -11,7 +11,7 @@ import LoginButton from "../Buttons/LoginButton";
 import SignupButton from "../Buttons/SingupButton";
 import NavbarItem from "./NavbarItem";
 import UserDropdown from "../User/UserDropdown ";
-
+import { IoCalendarOutline } from "react-icons/io5";
 
 export default function Navbar() {
   const { user, loading } = useAuth();
@@ -36,6 +36,11 @@ export default function Navbar() {
           route="inspections"
           icon={<FaMagnifyingGlass />}
         />
+        <NavbarItem
+          name="Calendar"
+          route="calendar"
+          icon={<IoCalendarOutline />}
+        />
         <NavbarItem name="Checklist" route="checklist" icon={<GoChecklist />} />
         <NavbarItem name="Vendors" route="vendors" icon={<GrUserWorker />} />
         <NavbarItem
@@ -43,19 +48,21 @@ export default function Navbar() {
           route="reports"
           icon={<HiOutlineDocumentReport />}
         />
-        <NavbarItem name="Organisation" route="organisation" icon={<CgOrganisation />} />
+        <NavbarItem
+          name="Organisation"
+          route="organisation"
+          icon={<CgOrganisation />}
+        />
       </div>
 
       {user ? (
-        <UserDropdown/>
+        <UserDropdown />
       ) : (
         <div className="absolute top-5 right-10 flex flex-row gap-2">
           <LoginButton />
           <SignupButton />
         </div>
       )}
-
-
     </nav>
   );
 }

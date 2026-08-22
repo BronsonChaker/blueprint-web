@@ -16,6 +16,8 @@ import ProjectView from "./pages/Projects/ProjectView.jsx";
 import NewProject from "./pages/Projects/NewProject.jsx";
 import Test from "./pages/Text.jsx";
 import LayoutDefault from "./pages/Layout/LayoutDefault.jsx";
+import Calendar from "./pages/Calendar.jsx";
+import Organisation from "./pages/Organisation.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -42,12 +44,20 @@ createRoot(document.getElementById("root")).render(
             element={<LayoutDefault children={<Inpsections />} />}
           />
           <Route
+            path="/calendar"
+            element={<LayoutDefault children={<Calendar />} />}
+          />
+          <Route
             path="/reports"
             element={<LayoutDefault children={<Reports />} />}
           />
           <Route
             path="/vendors"
             element={<LayoutDefault children={<Vendors />} />}
+          />
+          <Route
+            path="/organisation"
+            element={<LayoutDefault children={<Organisation />} />}
           />
 
           {/* Jobs Routes */}

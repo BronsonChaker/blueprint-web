@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "t9FjbsSqX7cEgunBpqvUo",
+  "name": "blueprint-web",
+  "defaultBranch": "main",
+  "defaultBackendId": "claude-code",
+  "createdAt": "2026-08-21T20:54:13.253Z",
+  "updatedAt": "2026-08-21T20:54:13.253Z"
+}

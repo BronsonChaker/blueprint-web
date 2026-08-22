@@ -12,8 +12,10 @@ function App() {
         <Link to="/forgotpassword">Forgot Password</Link>
         <Link to="/Projects">Projects</Link>
         <Link to="/inspections">Inspections</Link>
+        <Link to="/calendar">Inspections</Link>
         <Link to="/vendors">Vendors</Link>
-        <Link to="/Reports">Reports</Link>
+        <Link to="/reports">Reports</Link>
+        <Link to="/organisation">Reports</Link>
       </div>
     </>
   );
