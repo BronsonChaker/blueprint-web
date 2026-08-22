@@ -18,6 +18,10 @@ import Test from "./pages/Text.jsx";
 import LayoutDefault from "./pages/Layout/LayoutDefault.jsx";
 import Calendar from "./pages/Calendar.jsx";
 import Organisation from "./pages/Organisation.jsx";
+import Subscription from "./pages/Subscription.jsx";
+import Profile from "./pages/Profile.jsx";
+import Settings from "./pages/Settings.jsx";
+import Support from "./pages/Support.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -70,6 +74,24 @@ createRoot(document.getElementById("root")).render(
             element={<LayoutDefault children={<NewProject />} />}
           />
           <Route path="/test" element={<LayoutDefault children={<Test />} />} />
+
+          {/* User Routes */}
+          <Route
+            path="/profile"
+            element={<LayoutDefault children={<Profile />} />}
+          />
+          <Route
+            path="/subscription"
+            element={<LayoutDefault children={<Subscription />} />}
+          />
+          <Route
+            path="/settings"
+            element={<LayoutDefault children={<Settings />} />}
+          />
+          <Route
+            path="/support"
+            element={<LayoutDefault children={<Support />} />}
+          />
         </Routes>
       </AuthProvider>
     </BrowserRouter>

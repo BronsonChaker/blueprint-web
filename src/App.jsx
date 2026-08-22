@@ -15,7 +15,11 @@ function App() {
         <Link to="/calendar">Inspections</Link>
         <Link to="/vendors">Vendors</Link>
         <Link to="/reports">Reports</Link>
-        <Link to="/organisation">Reports</Link>
+        <Link to="/organisation">Organisation</Link>
+        <Link to="/profile">Reports</Link>
+        <Link to="/subscription">Subscription</Link>
+        <Link to="/settings">Settings</Link>
+        <Link to="/support">Support</Link>
       </div>
     </>
   );

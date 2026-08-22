@@ -42,7 +42,7 @@ export default function UserDropdown() {
             <ul className="flex gap-1 flex-col text-xs ">
               <li className="">
                 <Link
-                  to="/user"
+                  to="/profile"
                   className="flex flex-row gap-1 rounded-md items-center hover-bg px-1.5 py-1"
                 >
                   <FaUser className="text-md text-gray-700" />
@@ -53,7 +53,7 @@ export default function UserDropdown() {
               </li>
               <li className="">
                 <Link
-                  to="/user"
+                  to="/subscription"
                   className="flex flex-row gap-1 rounded-md items-center hover-bg px-1.5 py-1"
                 >
                   <FaCreditCard className="text-md text-gray-700" />
@@ -64,7 +64,7 @@ export default function UserDropdown() {
               </li>
               <li className="">
                 <Link
-                  to="/user"
+                  to="/settings"
                   className="flex flex-row gap-1 rounded-md items-center hover-bg px-1.5 py-1"
                 >
                   <IoIosSettings className="text-kg text-gray-700" />
@@ -75,7 +75,7 @@ export default function UserDropdown() {
               </li>
               <li className="">
                 <Link
-                  to="/user"
+                  to="/support"
                   className="flex flex-row gap-1 rounded-md items-center hover-bg px-1.5 py-1"
                 >
                   <BiSolidError className="text-md text-gray-700" />
