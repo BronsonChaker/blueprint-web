@@ -7,7 +7,7 @@ import { Link } from "react-router";
 import { BiSolidError } from "react-icons/bi";
 import { MdOutlineLogout } from "react-icons/md";
 
-export default function UserDropdown() {
+export default function UserDropdown({ expandState }) {
   const [isOpen, setIsOpen] = useState(false);
   const { user, logout } = useAuth();
 
@@ -19,19 +19,23 @@ export default function UserDropdown() {
       onClick={toggleDropdown}
       className="text-left px-2 py-1 hover:cursor-pointer overflow-visible"
     >
-      <div className="flex flex-col gap-2 px-2 py-1.5 rounded-lg border-2 border-stone-100 bg-white">
+      <div
+        className={`flex flex-col gap-2 ${expandState ? "px-2 py-1.5" : "p-0"} rounded-lg border-2 border-stone-100 bg-white`}
+      >
         <div className="flex flex-col items-center">
           <div className="flex items-center gap-2">
             <img
               src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/ct-assets/team-4.jpg"
               alt="avatar"
-              className="inline-block object-cover object-center w-8 h-8 rounded-full border-2 border-primary"
+              className={`inline-block object-cover object-center ${expandState ? "w-8 h-8" : "h-8 w-8 absolute bottom-5 left-6"} rounded-full border-2 border-primary`}
             />
-            <div>
-              <p className="font-sans antialiased text-xs font-medium text-current">
-                {user.username}
-              </p>
-            </div>
+            {expandState && (
+              <div>
+                <p className="font-sans antialiased text-xs font-medium text-current">
+                  {user.username}
+                </p>
+              </div>
+            )}
           </div>
 
           <div

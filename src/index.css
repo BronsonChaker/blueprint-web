@@ -63,6 +63,17 @@
   @apply hover:cursor-pointer hover:bg-stone-100 transition duration-300;
 }
 
+@utility navbar {
+  @apply h-screen  flex flex-col items-center justify-between border-r-2 border-stone-200;
+}
+
+@utility navbar-expanded {
+  @apply w-60 py-5 px-5;
+}
+@utility navbar-collapsed {
+  @apply w-17 py-5 px-3;
+}
+
 * {
   font-family: "Manrope", sans-serif;
 }

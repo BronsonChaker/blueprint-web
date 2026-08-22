@@ -19,67 +19,135 @@ import { useState } from "react";
 
 export default function Navbar() {
   const { user, loading } = useAuth();
-  const { expandSidebar, setExpandSidebar } = useState(false);
+  const [expandSidebar, setExpandSidebar] = useState(true);
 
   if (loading) return null;
+
+  const handleSidebar = () => {
+    setExpandSidebar((prev) => !prev);
+  };
+
+  console.log(expandSidebar);
+
   return (
-    <nav className="h-screen w-60 text-md py-5 px-5 flex flex-col items-center justify-between border-r-2 border-stone-200">
+    <nav
+      className={`navbar transition-all duration-200 ease-in-out ${expandSidebar ? "navbar-expanded" : "navbar-collapsed"}`}
+    >
       {/* Logo */}
       <div className="w-full">
-        <div className="row justify-between items-center w-full">
-          <div>
-            <Link to="">
-              <span className="font-bold text-2xl text-primary p-2">
-                Blueprint
-              </span>
-            </Link>
-          </div>
-          <div className="">
+        <div
+          className={`row ${expandSidebar ? "justify-between" : "justify-center"} items-center w-full`}
+        >
+          {expandSidebar && (
+            <div>
+              <Link to="/">
+                <span className="font-bold text-2xl text-primary p-2">
+                  Blueprint
+                </span>
+              </Link>
+            </div>
+          )}
+          <button className="" onClick={handleSidebar}>
             <GoSidebarExpand className="text-3xl rounded p-1 hc" />
-          </div>
+          </button>
         </div>
         {/* Links */}
 
-        <div className="flex flex-col font-medium text-gray-800 text-lg gap-2 items-start mt-2 w-full">
+        <div className="flex flex-col font-medium text-gray-800 text-lg gap-2 items-center mt-2 w-full">
           <NavbarItem
             name="Dashboard"
             route="dashboard"
-            icon={<MdDashboard />}
+            icon={
+              <MdDashboard
+                className={`${expandSidebar ? "text-sm" : "text-xl"}`}
+              />
+            }
+            expandState={expandSidebar}
           />
-          <NavbarItem name="Projects" route="projects" icon={<LuHouse />} />
-          <NavbarItem name="Tasks" route="tasks" icon={<MdTaskAlt />} />
+          <NavbarItem
+            name="Projects"
+            route="projects"
+            icon={
+              <LuHouse className={`${expandSidebar ? "text-sm" : "text-xl"}`} />
+            }
+            expandState={expandSidebar}
+          />
+          <NavbarItem
+            name="Tasks"
+            route="tasks"
+            icon={
+              <MdTaskAlt
+                className={`${expandSidebar ? "text-sm" : "text-xl"}`}
+              />
+            }
+            expandState={expandSidebar}
+          />
           <NavbarItem
             name="Planner"
             route="planner"
-            icon={<AiOutlineNodeExpand />}
+            icon={
+              <AiOutlineNodeExpand
+                className={`${expandSidebar ? "text-sm" : "text-xl"}`}
+              />
+            }
+            expandState={expandSidebar}
           />
           <NavbarItem
             name="Inspections"
             route="inspections"
-            icon={<FaMagnifyingGlass />}
+            icon={
+              <FaMagnifyingGlass
+                className={`${expandSidebar ? "text-sm" : "text-xl"}`}
+              />
+            }
+            expandState={expandSidebar}
           />
           <NavbarItem
             name="Calendar"
             route="calendar"
-            icon={<IoCalendarOutline />}
+            icon={
+              <IoCalendarOutline
+                className={`${expandSidebar ? "text-sm" : "text-xl"}`}
+              />
+            }
+            expandState={expandSidebar}
           />
-          <NavbarItem name="Vendors" route="vendors" icon={<GrUserWorker />} />
+          <NavbarItem
+            name="Vendors"
+            route="vendors"
+            icon={
+              <GrUserWorker
+                className={`${expandSidebar ? "text-sm" : "text-xl"}`}
+              />
+            }
+            expandState={expandSidebar}
+          />
           <NavbarItem
             name="Reports"
             route="reports"
-            icon={<HiOutlineDocumentReport />}
+            icon={
+              <HiOutlineDocumentReport
+                className={`${expandSidebar ? "text-sm" : "text-xl"}`}
+              />
+            }
+            expandState={expandSidebar}
           />
           <NavbarItem
             name="Organisation"
             route="organisation"
-            icon={<CgOrganisation />}
+            icon={
+              <CgOrganisation
+                className={`${expandSidebar ? "text-sm" : "text-xl"}`}
+              />
+            }
+            expandState={expandSidebar}
           />
         </div>
       </div>
 
       <div className="w-full">
         {user ? (
-          <UserDropdown />
+          <UserDropdown expandState={expandSidebar} />
         ) : (
           <div className="w-full row items-center gap-2 justify-center">
             <LoginButton />
