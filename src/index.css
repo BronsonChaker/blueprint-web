@@ -74,15 +74,15 @@
   @apply w-17 py-5 px-3;
 }
 
+@utility navbar-item {
+  @apply flex flex-row gap-1 px-1 text-sm items-center font-medium text-gray-700  rounded-md py-1 hover:duration-200 w-full;
+}
+
 * {
   font-family: "Manrope", sans-serif;
 }
 
 a.active {
-  color: #1a365d;
-  font-weight: 600;
-  /*text-decoration: underline;*/
-  text-decoration-thickness: 2px;
-  text-underline-offset: 10px;
-  text-decoration-color: #1a365d;
+  background-color: var(--color-primary);
+  border-radius: 6px;
 }
