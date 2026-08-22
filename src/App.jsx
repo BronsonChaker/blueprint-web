@@ -10,7 +10,9 @@ function App() {
         <Link to="/register">Register</Link>
         <Link to="/login">Login</Link>
         <Link to="/forgotpassword">Forgot Password</Link>
-        <Link to="/Projects">Projects</Link>
+        <Link to="/projects">Projects</Link>
+        <Link to="/tasks">Projects</Link>
+        <Link to="/planner">Planner</Link>
         <Link to="/inspections">Inspections</Link>
         <Link to="/calendar">Inspections</Link>
         <Link to="/vendors">Vendors</Link>

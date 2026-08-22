@@ -13,6 +13,8 @@ import NavbarItem from "./NavbarItem";
 import UserDropdown from "../User/UserDropdown ";
 import { IoCalendarOutline } from "react-icons/io5";
 import { GoSidebarExpand } from "react-icons/go";
+import { MdTaskAlt } from "react-icons/md";
+import { AiOutlineNodeExpand } from "react-icons/ai";
 import { useState } from "react";
 
 export default function Navbar() {
@@ -45,6 +47,12 @@ export default function Navbar() {
             icon={<MdDashboard />}
           />
           <NavbarItem name="Projects" route="projects" icon={<LuHouse />} />
+          <NavbarItem name="Tasks" route="tasks" icon={<MdTaskAlt />} />
+          <NavbarItem
+            name="Planner"
+            route="planner"
+            icon={<AiOutlineNodeExpand />}
+          />
           <NavbarItem
             name="Inspections"
             route="inspections"
@@ -54,11 +62,6 @@ export default function Navbar() {
             name="Calendar"
             route="calendar"
             icon={<IoCalendarOutline />}
-          />
-          <NavbarItem
-            name="Checklist"
-            route="checklist"
-            icon={<GoChecklist />}
           />
           <NavbarItem name="Vendors" route="vendors" icon={<GrUserWorker />} />
           <NavbarItem

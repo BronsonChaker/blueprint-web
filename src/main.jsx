@@ -22,6 +22,8 @@ import Subscription from "./pages/Subscription.jsx";
 import Profile from "./pages/Profile.jsx";
 import Settings from "./pages/Settings.jsx";
 import Support from "./pages/Support.jsx";
+import Tasks from "./pages/Tasks.jsx";
+import Planner from "./pages/Planner.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -42,6 +44,14 @@ createRoot(document.getElementById("root")).render(
           <Route
             path="/projects"
             element={<LayoutDefault children={<Projects />} />}
+          />
+          <Route
+            path="/tasks"
+            element={<LayoutDefault children={<Tasks />} />}
+          />
+          <Route
+            path="/planner"
+            element={<LayoutDefault children={<Planner />} />}
           />
           <Route
             path="/inspections"
