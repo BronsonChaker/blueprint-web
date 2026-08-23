@@ -1,10 +1,10 @@
 import Navbar from "../../components/Navbar/Navbar";
 
-export default function LayoutDefault( {children}) {
+export default function LayoutDefault({ children }) {
   return (
-    <main className="flex">
+    <main className="flex min-h-screen">
       <Navbar />
-      <div className="flex-1">{children}</div>
+      <div className="flex-1 h-full">{children}</div>
     </main>
-  )
+  );
 }
