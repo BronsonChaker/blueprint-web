@@ -1,0 +1,26 @@
+export default function CriticalTaskItem({
+  projectNumber,
+  projectAddress,
+  name,
+  date,
+  user,
+}) {
+  return (
+    <div className="column gap-2 p-2 border border-stone-300 hc rounded-lg text-gray-700">
+      <span className="font-semibold text-sm">
+        {projectNumber + " - " + projectAddress}
+      </span>
+      <span className="text-xs">
+        <span className="font-semibold">Task Name: </span> {name}
+      </span>
+      <span className="text-xs">
+        <span className="font-semibold">Assigned To: </span>
+        {user}
+      </span>
+      <span className="text-xs">
+        <span className="font-semibold">Due: </span>
+        {date}
+      </span>
+    </div>
+  );
+}
