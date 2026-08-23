@@ -2,7 +2,6 @@ import { FaUser } from "react-icons/fa";
 import { LiaFileContractSolid } from "react-icons/lia";
 import { AiOutlineStock } from "react-icons/ai";
 import { RxActivityLog } from "react-icons/rx";
-import { Progress } from "flowbite-react";
 import ProjectNoteContainer from "./ProjectNoteContainer";
 
 export default function ProjectDetails() {
@@ -76,9 +75,7 @@ export default function ProjectDetails() {
         <div className="grid grid-cols-2 p-5 gap-5 text-sm">
           <div className="flex flex-col col-span-1">
             <span className="font-semibold">Total Contract Value</span>
-            <span className="text-md">
-              $758,240.48
-            </span>
+            <span className="text-md">$758,240.48</span>
             <span className="text-xs">Incl. Variations</span>
           </div>
 
@@ -92,7 +89,6 @@ export default function ProjectDetails() {
             <span className="font-semibold">Amount Claimed</span>
             <span className="text-xl font-bold text-primary">$425,000.00</span>
             <span className="text-xs">56% of Contract Value</span>
-            <Progress progress={45} color="green" />
           </div>
           <div className="flex flex-col justify-between gap-3 col-span-1">
             <span className="font-semibold">Current Stage</span>
@@ -101,7 +97,6 @@ export default function ProjectDetails() {
               <div className="w-1/5">
                 <div className="w-full flex flex-col text-center justify-center">
                   <span className="text-xs font-bold text-green-600">Slab</span>
-                  <Progress progress={100} color="green" />
                 </div>
               </div>
               <div className="w-1/5 ">

@@ -17,7 +17,6 @@
     "@tailwindcss/vite": "^4.3.2",
     "@vis.gl/react-google-maps": "^1.9.0",
     "axios": "^1.18.0",
-    "flowbite-react": "^0.10.2",
     "prop-types": "^15.8.1",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",

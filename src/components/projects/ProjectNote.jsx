@@ -1,14 +1,10 @@
-import { Avatar } from "flowbite-react";
-
 export default function ProjectNote() {
   return (
     <div className="p-2">
       <div className="p-2 px-5 justify-between flex flex-col">
         <div className="flex flex-row gap-3 items-center justify-between">
           <div className="flex flex-row items-center gap-2">
-            <div>
-              <Avatar />
-            </div>
+            <div></div>
             <div className="flex flex-col">
               <span className="font-semibold text-md">Jeff Smith</span>
               <span className="text-xs text-subtext font-medium">
