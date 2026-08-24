@@ -1,6 +1,7 @@
 import ProjectTableRow from "./ProjectTableRow";
-import { getJobs } from "../../api/endpoints/projects";
-import { useEffect, useState} from "react";
+// import { getJobs } from "../../api/endpoints/projects";
+import { ProjectAPI } from "../../api/ProjectAPI";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import {} from "react";
 
@@ -16,18 +17,22 @@ export default function ProjectTable({ jobCountData, query }) {
       job.job_number?.toLowerCase().includes(search) ||
       job.address?.toLowerCase().includes(search)
     );
-  })
+  });
 
   useEffect(() => {
-    getJobs()
-      .then((data) => {
-        setJobs(data);
-        jobCountData(data.length);
-      })
-      .catch((err) => setError(err.message))
-      .finally(() => setLoading(false));
-  }, [jobCountData]);
-
+    ProjectAPI.getAll().then((jobs) => {
+      setJobs(jobs);
+    });
+  });
+  // useEffect(() => {
+  //   getJobs()
+  //     .then((data) => {
+  //       setJobs(data);
+  //       jobCountData(data.length);
+  //     })
+  //     .catch((err) => setError(err.message))
+  //     .finally(() => setLoading(false));
+  // }, [jobCountData]);
 
   const handleSelectJob = (jobId) => {
     navigate(`/jobs/${jobId}`);
