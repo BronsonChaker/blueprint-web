@@ -1,12 +1,11 @@
 import axios from "axios";
 
-const accessToken = localStorage.getItem("access_token");
 const baseUrl = import.meta.env.VITE_API_URL;
 
 //axios instance creation
 export const api = axios.create({
-  baseUrl: baseUrl,
-  headers: { Authorization: `Bearer ${accessToken}` },
+  withCredentials: true,
+  baseURL: baseUrl,
 });
 
 //axios error handling
@@ -20,8 +19,15 @@ const errorHandler = (error) => {
   return Promise.reject(error);
 };
 
-api.interceptors.response.use(undefined, (error) => {
-  return errorHandler(error);
+api.interceptors.request.use((config) => {
+  const accessToken = localStorage.getItem("access_token");
+  if (accessToken) {
+    config.headers.Authorization = `Bearer ${accessToken}`;
+  }
+
+  return config;
 });
+
+api.interceptors.response.use(undefined, errorHandler);
 
 export default api;

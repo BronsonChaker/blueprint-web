@@ -3,13 +3,19 @@ import ProjectTableRow from "./ProjectTableRow";
 import { ProjectAPI } from "../../api/ProjectAPI";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
-import {} from "react";
 
 export default function ProjectTable({ jobCountData, query }) {
   const [jobs, setJobs] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    ProjectAPI.getAll()
+      .then((jobs) => {
+        setJobs(jobs ?? []);
+        jobCountData(jobs.length);
+      })
+      .catch((err) => console.error(err));
+  }, [jobCountData]);
 
   const filteredJobs = jobs.filter((job) => {
     const search = query.toLowerCase();
@@ -19,27 +25,9 @@ export default function ProjectTable({ jobCountData, query }) {
     );
   });
 
-  useEffect(() => {
-    ProjectAPI.getAll().then((jobs) => {
-      setJobs(jobs);
-    });
-  });
-  // useEffect(() => {
-  //   getJobs()
-  //     .then((data) => {
-  //       setJobs(data);
-  //       jobCountData(data.length);
-  //     })
-  //     .catch((err) => setError(err.message))
-  //     .finally(() => setLoading(false));
-  // }, [jobCountData]);
-
   const handleSelectJob = (jobId) => {
     navigate(`/jobs/${jobId}`);
   };
-
-  if (loading) return <p>Loading ...</p>;
-  if (error) return <p>Error: {error}</p>;
 
   return (
     <table className="w-full">

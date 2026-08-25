@@ -13,7 +13,6 @@ export default function ProjectView() {
   useEffect(() => {
     viewProject(params.id)
       .then((data) => {
-        console.log("job data:", data);
         setJob(data[0]);
       })
       .catch((err) => setError(err.message))

@@ -7,12 +7,12 @@ export const ProjectAPI = {
       url: "/jobs/",
       method: "GET",
       signal: cancel
-        ? cancelApiObject[this.search.name].handleRequestCancellation().signal
+        ? cancelApiObject[this.getAll.name].handleRequestCancellation().signal
         : undefined,
     });
 
-    return response.data.products;
+    return response.data;
   },
 };
 
-const cancelApiObject = defineCancelApiObject(ProductAPI);
+const cancelApiObject = defineCancelApiObject(ProjectAPI);

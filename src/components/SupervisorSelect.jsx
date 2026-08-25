@@ -22,7 +22,7 @@ export default function SupervisorSelect({ onChange }) {
     setOption(value);
     onChange?.(value);
   };
-console.log(supervisors.map(s => s.id));
+
   return (
     <select
       name="selectedSupervsor"

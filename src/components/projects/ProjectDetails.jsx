@@ -104,7 +104,6 @@ export default function ProjectDetails() {
                   <span className="text-xs font-bold text-green-600">
                     Frame
                   </span>
-                  <Progress progress={100} color="green" />
                 </div>
               </div>
               <div className="w-1/5 ">
@@ -112,13 +111,11 @@ export default function ProjectDetails() {
                   <span className="text-xs font-bold text-green-600">
                     Lockup
                   </span>
-                  <Progress progress={100} color="green" />
                 </div>
               </div>
               <div className="w-1/5 opacity-35">
                 <div className="w-full flex flex-col text-center justify-center">
                   <span className="text-xs font-bold text-primary">Fix</span>
-                  <Progress progress={0} color="green" />
                 </div>
               </div>
               <div className="w-1/5 opacity-35">
@@ -126,7 +123,6 @@ export default function ProjectDetails() {
                   <span className="text-xs font-bold text-primary">
                     Complete
                   </span>
-                  <Progress progress={0} color="green" />
                 </div>
               </div>
             </div>
