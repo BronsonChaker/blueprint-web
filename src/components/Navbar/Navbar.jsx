@@ -26,8 +26,6 @@ export default function Navbar() {
     setExpandSidebar((prev) => !prev);
   };
 
-  console.log(expandSidebar);
-
   return (
     <nav
       className={`navbar transition-all duration-200 ease-in-out ${expandSidebar ? "navbar-expanded" : "navbar-collapsed"}`}
