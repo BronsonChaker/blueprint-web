@@ -5,10 +5,14 @@ export default function LocationContainer() {
   return (
     <div className="col-span-2 p-5 h-147">
       <p className="text-lg font-semibold text-gray-700">Active Projects</p>
-      <hr className="border-gray-300 mt-1 mb-3"></hr>
+
       <APIProvider apiKey={API_KEY}>
         <Map
-          style={{ width: "100%", height: "93%" }}
+          style={{
+            width: "100%",
+            height: "93%",
+            marginTop: "5px",
+          }}
           defaultCenter={{ lat: 22.54992, lng: 0 }}
           defaultZoom={3}
           gestureHandling="greedy"
@@ -18,11 +22,3 @@ export default function LocationContainer() {
     </div>
   );
 }
-
-<iframe
-  src="https://storage.googleapis.com/maps-solutions-6hy1gmur7d/neighborhood-discovery/0uy8/neighborhood-discovery.html"
-  width="100%"
-  height="100%"
-  style="border:0;"
-  loading="lazy"
-></iframe>;

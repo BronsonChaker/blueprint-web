@@ -6,7 +6,7 @@ import { HiOutlineDocumentReport } from "react-icons/hi";
 
 export default function DashboardShortcuts() {
   return (
-    <div className="grid grid-cols-4 mt-5">
+    <div className="grid grid-cols-4 mt-5 w-full">
       <div className="row col-span-4 justify-between gap-5">
         <DashboardCard
           link="/projects"
