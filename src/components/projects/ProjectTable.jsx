@@ -1,5 +1,4 @@
 import ProjectTableRow from "./ProjectTableRow";
-// import { getJobs } from "../../api/endpoints/projects";
 import { ProjectAPI } from "../../api/ProjectAPI";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
@@ -7,13 +6,12 @@ import CircularProgress from "@mui/material/CircularProgress";
 
 export default function ProjectTable({ jobCountData, query }) {
   const [jobs, setJobs] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
     ProjectAPI.getAll()
       .then(async (jobs) => {
-        setIsLoading(true);
         setJobs(jobs ?? []);
         jobCountData(jobs.length);
         setIsLoading(false);
@@ -34,7 +32,7 @@ export default function ProjectTable({ jobCountData, query }) {
   };
 
   return (
-    <div clasName="h-full w-full">
+    <div className="h-full w-full">
       {isLoading ? (
         <div className="w-full h-150 text-center flex items-center justify-center">
           <CircularProgress size="30px" aria-label="Loading…" />;
