@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getProjectTasks } from "../../api/endpoints/projects";
+import { TaskAPI } from "../../api/TaskAPI";
 import { useParams } from "react-router";
 import ProjectTasksRow from "./ProjectTasksRow";
 import TaskSidebar from "../Tasks/TaskSidebar";
@@ -9,12 +9,12 @@ export default function ProjectTasks() {
   const [loading, isLoading] = useState(true);
   const [error, setError] = useState(null);
   const params = useParams();
-  const [taskSidebar, setTaskSidebar] = useState(false)
-  const [selectedTask, setSelectedTask] = useState(null)
-  const [query, setQuery] = useState("")
+  const [taskSidebar, setTaskSidebar] = useState(false);
+  const [selectedTask, setSelectedTask] = useState(null);
+  const [query, setQuery] = useState("");
 
   useEffect(() => {
-    getProjectTasks(params.id)
+    TaskAPI.getProjectTasks(params.id)
       .then((data) => setTasks(data))
       .catch((err) => setError(err.message))
       .finally(() => isLoading(false));
@@ -22,19 +22,23 @@ export default function ProjectTasks() {
 
   const handleSelectTasks = (task) => {
     setSelectedTask(task);
-    setTaskSidebar((prev) => !prev)
-  }
+    setTaskSidebar((prev) => !prev);
+  };
 
   const handleCloseTaskSidebar = () => {
-    setTaskSidebar(false)
-    setSelectedTask(null)
-  }
+    setTaskSidebar(false);
+    setSelectedTask(null);
+  };
 
   if (loading) return <p>Loading ...</p>;
   if (error) return <p>Error: {error}</p>;
   return (
     <div>
-      <SearchBar placeholder="Search by Task Name or Vendor" query={query} setQuery={setQuery} />
+      <SearchBar
+        placeholder="Search by Task Name or Vendor"
+        query={query}
+        setQuery={setQuery}
+      />
       <table className="w-full mt-2">
         <thead>
           <tr className="bg-gray-50 rounded-t-lg">
@@ -69,7 +73,11 @@ export default function ProjectTasks() {
           ))}
         </tbody>
       </table>
-      <TaskSidebar taskSidebar={taskSidebar} onClose={handleCloseTaskSidebar} selectedTask={selectedTask} />
+      <TaskSidebar
+        taskSidebar={taskSidebar}
+        onClose={handleCloseTaskSidebar}
+        selectedTask={selectedTask}
+      />
     </div>
   );
 }

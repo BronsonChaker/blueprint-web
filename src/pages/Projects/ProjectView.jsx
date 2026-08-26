@@ -1,4 +1,4 @@
-import { viewProject } from "../../api/endpoints/projects";
+import { ProjectAPI } from "../../api/ProjectAPI";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import ProjectHeader from "../../components/Projects/ProjectHeader";
@@ -11,7 +11,7 @@ export default function ProjectView() {
   const params = useParams();
 
   useEffect(() => {
-    viewProject(params.id)
+    ProjectAPI.viewProject(params.id)
       .then((data) => {
         setJob(data[0]);
       })

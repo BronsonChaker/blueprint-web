@@ -7,11 +7,10 @@ export const OrganisationAPI = {
       url: "/organisations/users",
       method: "GET",
       signal: cancel
-        ? cancelApiObject[this.getAll.name].handleRequestCancellation().signal
+        ? cancelApiObject[this.getSupervisors.name].handleRequestCancellation()
+            .signal
         : undefined,
     });
-    console.log(response.data);
-
     return response.data;
   },
 };

@@ -13,6 +13,18 @@ export const ProjectAPI = {
 
     return response.data;
   },
+  viewProject: async function (id, cancel = false) {
+    const response = await api.request({
+      url: `/jobs/${id}`,
+      method: "GET",
+      signal: cancel
+        ? cancelApiObject[this.viewProject.name].handleRequestCancellation()
+            .signal
+        : undefined,
+    });
+
+    return response.data;
+  },
 };
 
 const cancelApiObject = defineCancelApiObject(ProjectAPI);

@@ -11,14 +11,10 @@ export default function SupervisorSelect({ onChange }) {
       .then(async (supervisors) => {
         setIsLoading(true);
         setSupervisors(supervisors);
-        console.log("Sups", supervisors);
         setIsLoading(false);
       })
       .catch((err) => console.error(err));
   }, []);
-
-  // if (loading) return <p>Loading ...</p>;
-  // if (error) return <p>Error: {error}</p>;
 
   const handleChange = (e) => {
     const value = e.target.value;
