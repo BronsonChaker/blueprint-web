@@ -1,5 +1,6 @@
 import ProjectTableRow from "./ProjectTableRow";
 import { ProjectAPI } from "../../api/ProjectAPI";
+import { UserAPI } from "../../api/UserAPI";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import CircularProgress from "@mui/material/CircularProgress";
@@ -10,13 +11,16 @@ export default function ProjectTable({ jobCountData, query }) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    ProjectAPI.getAll()
-      .then(async (jobs) => {
-        setJobs(jobs ?? []);
-        jobCountData(jobs.length);
-        setIsLoading(false);
-      })
-      .catch((err) => console.error(err));
+    ProjectAPI.getAll().then(async (jobs) => {
+      setJobs(jobs ?? []);
+      setIsLoading(false);
+    });
+  }, []);
+
+  useEffect(() => {
+    UserAPI.projectCount().then(async (data) => {
+      jobCountData(data);
+    });
   }, [jobCountData]);
 
   const filteredJobs = jobs.filter((job) => {

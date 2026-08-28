@@ -5,15 +5,14 @@ import SupervisorSelect from "../../components/SupervisorSelect";
 import { useState, useCallback } from "react";
 import SearchBar from "../../components/UI/SearchBar";
 
-("../api/endpoints/projects.js");
-
 export default function Projects() {
   const [jobCount, setJobCount] = useState("");
   const [query, setQuery] = useState("");
 
   const getJobCount = useCallback((data) => {
-      setJobCount(data);
-    }, []);
+    setJobCount(data);
+  }, []);
+
   return (
     <div className="px-10 mt-10">
       <title>Project</title>
@@ -23,19 +22,23 @@ export default function Projects() {
         <div className="w-1/2">
           <h1 className="text-heading">Projects</h1>
           <p className="text-page-desc">
-            You are assigned {jobCount} projects. Select a project to view
-            schedule and additonal information.
+            You are assigned {jobCount.job_count} projects. Select a project to
+            view schedule and additonal information.
           </p>
         </div>
       </div>
 
       {/* Search Filter & Buttons */}
       <div className="mt-2 flex flex-row gap-2">
-        <SearchBar placeholder="Search by ID or Address" query={query} setQuery={setQuery}/>
+        <SearchBar
+          placeholder="Search by ID or Address"
+          query={query}
+          setQuery={setQuery}
+        />
 
         {/* Supervisor Filter */}
         <div className="justify-center text-xs rounded-xl  outline-none">
-          <SupervisorSelect query={query} setQuery={setQuery}/>
+          <SupervisorSelect query={query} setQuery={setQuery} />
         </div>
 
         {/* Status Filter */}

@@ -3,8 +3,18 @@ import { LuHouse } from "react-icons/lu";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import { MdTaskAlt } from "react-icons/md";
 import { HiOutlineDocumentReport } from "react-icons/hi";
+import { useState, useEffect } from "react";
+import { UserAPI } from "../../api/UserAPI.js";
 
 export default function DashboardShortcuts() {
+  const [jobCount, setJobCount] = useState("");
+
+  useEffect(() => {
+    UserAPI.projectCount().then((data) => {
+      setJobCount(data);
+    });
+  }, []);
+
   return (
     <div className="grid grid-cols-4 mt-5 w-full">
       <div className="row col-span-4 justify-between gap-5">
@@ -12,8 +22,8 @@ export default function DashboardShortcuts() {
           link="/projects"
           title="Projects"
           icon={<LuHouse className="text-4xl rounded-full p-1.5 bg-gray-100" />}
-          value={"24"}
-          insights={"-5 this month"}
+          value={jobCount.job_count}
+          insights={"Total projects"}
         />
         <DashboardCard
           link="/tasks"
