@@ -12,7 +12,6 @@ export const TaskAPI = {
         : undefined,
     });
 
-    console.log("Get Project Tasks", response.data);
     return response.data;
   },
 };
