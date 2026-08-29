@@ -15,8 +15,6 @@ export default function OverviewContainer({ title }) {
     });
   }, []);
 
-  console.log("Critical Tasks", criticalTasks);
-
   return (
     <div className="h-full w-full card-outline p-5">
       <span className="text-lg font-semibold text-gray-700">{title}</span>

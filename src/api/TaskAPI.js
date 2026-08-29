@@ -26,6 +26,18 @@ export const TaskAPI = {
 
     return response.data;
   },
+  getAllTasks: async function (cancel = false) {
+    const response = await api.request({
+      url: `/tasks/`,
+      method: "GET",
+      signal: cancel
+        ? cancelApiObject[this.getProjectTasks.name].handleRequestCancellation()
+            .signal
+        : undefined,
+    });
+
+    return response.data;
+  },
 };
 
 const cancelApiObject = defineCancelApiObject(TaskAPI);

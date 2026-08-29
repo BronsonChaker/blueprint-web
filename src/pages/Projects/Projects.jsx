@@ -14,7 +14,7 @@ export default function Projects() {
   }, []);
 
   return (
-    <div className="px-10 mt-10">
+    <div className="px-10 py-5">
       <title>Project</title>
       {/* Top Header/Card Section */}
       <div className="w-full flex flex-row">
