@@ -2,6 +2,7 @@ export default function CriticalTaskItem({
   projectNumber,
   projectAddress,
   name,
+  vendor,
   date,
 }) {
   return (
@@ -11,6 +12,9 @@ export default function CriticalTaskItem({
       </span>
       <span className="text-xs">
         <span className="font-semibold">Task Name: </span> {name}
+      </span>
+      <span className="text-xs">
+        <span className="font-semibold">Assigned To: </span> {vendor}
       </span>
       <span className="text-xs">
         <span className="font-semibold">Due: </span>

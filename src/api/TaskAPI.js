@@ -14,6 +14,18 @@ export const TaskAPI = {
 
     return response.data;
   },
+  getCriticalTasks: async function (cancel = false) {
+    const response = await api.request({
+      url: `/tasks/critical`,
+      method: "GET",
+      signal: cancel
+        ? cancelApiObject[this.getProjectTasks.name].handleRequestCancellation()
+            .signal
+        : undefined,
+    });
+
+    return response.data;
+  },
 };
 
 const cancelApiObject = defineCancelApiObject(TaskAPI);
