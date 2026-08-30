@@ -1,16 +1,16 @@
-import CriticalTaskItem from "../Tasks/CriticalTaskItem";
+import MilestoneTaskItem from "../Tasks/MilestoneTaskItem";
 import { useEffect, useState } from "react";
 import { TaskAPI } from "../../api/TaskAPI";
 import CircularProgress from "@mui/material/CircularProgress";
 
-export default function CriticalTaskContainer({ title }) {
-  const [criticalTasks, setCriticalTasks] = useState([]);
+export default function MilestoneTaskContainer({ title }) {
+  const [milestoneTasks, setMilestoneTasks] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    TaskAPI.getCriticalTasks().then(async (criticalTasks) => {
+    TaskAPI.getMilestoneTasks().then(async (milestoneTasks) => {
       setIsLoading(true);
-      setCriticalTasks(criticalTasks);
+      setMilestoneTasks(milestoneTasks);
       setIsLoading(false);
     });
   }, []);
@@ -25,15 +25,15 @@ export default function CriticalTaskContainer({ title }) {
         </div>
       ) : (
         <div className=" max-h-125 column gap-2 mt-2">
-          {criticalTasks.map((criticalTask) => (
-            <CriticalTaskItem
-              key={criticalTask.id}
-              projectNumber={criticalTask.job_number}
-              projectAddress={criticalTask.job_address}
-              name={criticalTask.name}
-              type={criticalTask.task_type}
-              date={criticalTask.booking_date}
-              vendor={criticalTask.vendor_name}
+          {milestoneTasks.map((milestoneTask) => (
+            <MilestoneTaskItem
+              key={milestoneTask.id}
+              projectNumber={milestoneTask.job_number}
+              projectAddress={milestoneTask.job_address}
+              name={milestoneTask.name}
+              type={milestoneTask.task_type}
+              date={milestoneTask.booking_date}
+              vendor={milestoneTask.vendor_name}
             />
           ))}
         </div>

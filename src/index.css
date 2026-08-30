@@ -63,6 +63,12 @@
 @utility hc {
   @apply hover:cursor-pointer hover:bg-stone-100 transition duration-300;
 }
+@utility hc-critical {
+  @apply hover:cursor-pointer hover:bg-amber-100 transition duration-300;
+}
+@utility hc-milestone {
+  @apply hover:cursor-pointer hover:bg-blue-100 transition duration-300;
+}
 
 @utility navbar {
   @apply h-screen  flex flex-col items-center justify-between border-r-2 border-stone-200;

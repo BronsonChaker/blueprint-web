@@ -19,10 +19,26 @@ export const TaskAPI = {
       url: `/tasks/critical`,
       method: "GET",
       signal: cancel
-        ? cancelApiObject[this.getProjectTasks.name].handleRequestCancellation()
-            .signal
+        ? cancelApiObject[
+            this.getCriticalTasks.name
+          ].handleRequestCancellation().signal
         : undefined,
     });
+
+    return response.data;
+  },
+  getMilestoneTasks: async function (cancel = false) {
+    const response = await api.request({
+      url: `/tasks/milestone`,
+      method: "GET",
+      signal: cancel
+        ? cancelApiObject[
+            this.getMilestoneTasks.name
+          ].handleRequestCancellation().signal
+        : undefined,
+    });
+
+    console.log("Milestone", response.data);
 
     return response.data;
   },
@@ -31,7 +47,7 @@ export const TaskAPI = {
       url: `/tasks/`,
       method: "GET",
       signal: cancel
-        ? cancelApiObject[this.getProjectTasks.name].handleRequestCancellation()
+        ? cancelApiObject[this.getAllTasks.name].handleRequestCancellation()
             .signal
         : undefined,
     });

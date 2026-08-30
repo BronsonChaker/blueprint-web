@@ -1,4 +1,4 @@
-export default function CriticalTaskItem({
+export default function MilestoneTaskItem({
   projectNumber,
   projectAddress,
   name,
@@ -6,7 +6,7 @@ export default function CriticalTaskItem({
   date,
 }) {
   return (
-    <div className="column gap-1 p-2 border-2 border-amber-400 hc-critical rounded-md text-gray-700 bg-amber-200">
+    <div className="column gap-1 p-2 border-2 border-blue-400 hc-milestone rounded-md text-gray-700 bg-blue-200">
       <span className="font-semibold text-sm">
         {projectNumber + " - " + projectAddress}
       </span>
