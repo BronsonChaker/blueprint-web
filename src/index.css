@@ -8,7 +8,7 @@
   --color-primary: #1a365d;
   --color-secondary: #4a5568;
   --color-tertiary: #f6ad55;
-  --color-neutral: #f7fafc;
+  --color-neutral: #ececec;
   --color-subtext: #696969;
   --color-border: #eef1f3;
 }
@@ -41,7 +41,7 @@
 }
 
 @utility card-outline {
-  @apply shadow-sm rounded-lg border border-stone-100 bg-white text-gray-700;
+  @apply shadow-sm rounded-lg border-2 border-stone-100 bg-white text-gray-700;
 }
 
 @utility text-heading {
@@ -75,7 +75,7 @@
 }
 
 @utility navbar-expanded {
-  @apply w-60 py-5 px-5;
+  @apply w-70 py-5 px-5;
 }
 @utility navbar-collapsed {
   @apply w-17 py-5 px-3;

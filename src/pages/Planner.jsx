@@ -62,7 +62,7 @@ export default function Planner() {
           Use the planner to visually inspect timelines and make adjustments
         </p>
       </div>
-      <div className="w-full h-full">
+      <div className="">
         <Willow>
           <Toolbar api={api} />
           <Gantt tasks={tasks} links={links} scales={scales} zoom={true} />
