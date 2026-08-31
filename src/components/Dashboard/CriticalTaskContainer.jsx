@@ -2,10 +2,13 @@ import CriticalTaskItem from "../Tasks/CriticalTaskItem";
 import { useEffect, useState } from "react";
 import { TaskAPI } from "../../api/TaskAPI";
 import CircularProgress from "@mui/material/CircularProgress";
+import TaskSidebar from "../Tasks/TaskSidebar";
 
 export default function CriticalTaskContainer({ title }) {
   const [criticalTasks, setCriticalTasks] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [taskSidebar, setTaskSidebar] = useState(false);
+  const [selectedTask, setSelectedTask] = useState(null);
 
   useEffect(() => {
     TaskAPI.getCriticalTasks().then(async (criticalTasks) => {
@@ -14,6 +17,16 @@ export default function CriticalTaskContainer({ title }) {
       setIsLoading(false);
     });
   }, []);
+
+  const handleSelectTasks = (criticalTask) => {
+    setSelectedTask(criticalTask);
+    setTaskSidebar((prev) => !prev);
+  };
+
+  const handleCloseTaskSidebar = () => {
+    setTaskSidebar(false);
+    setSelectedTask(null);
+  };
 
   return (
     <div className="h-full w-full card-outline p-5">
@@ -34,10 +47,16 @@ export default function CriticalTaskContainer({ title }) {
               type={criticalTask.task_type}
               date={criticalTask.booking_date}
               vendor={criticalTask.vendor_name}
+              onSelect={() => handleSelectTasks(criticalTask)}
             />
           ))}
         </div>
       )}
+      <TaskSidebar
+        taskSidebar={taskSidebar}
+        onClose={handleCloseTaskSidebar}
+        selectedTask={selectedTask}
+      />
     </div>
   );
 }

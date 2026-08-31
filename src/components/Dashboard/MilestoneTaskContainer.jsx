@@ -2,10 +2,13 @@ import MilestoneTaskItem from "../Tasks/MilestoneTaskItem";
 import { useEffect, useState } from "react";
 import { TaskAPI } from "../../api/TaskAPI";
 import CircularProgress from "@mui/material/CircularProgress";
+import TaskSidebar from "../Tasks/TaskSidebar";
 
 export default function MilestoneTaskContainer({ title }) {
   const [milestoneTasks, setMilestoneTasks] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [taskSidebar, setTaskSidebar] = useState(false);
+  const [selectedTask, setSelectedTask] = useState(null);
 
   useEffect(() => {
     TaskAPI.getMilestoneTasks().then(async (milestoneTasks) => {
@@ -14,6 +17,16 @@ export default function MilestoneTaskContainer({ title }) {
       setIsLoading(false);
     });
   }, []);
+
+  const handleSelectTasks = (milestoneTask) => {
+    setSelectedTask(milestoneTask);
+    setTaskSidebar((prev) => !prev);
+  };
+
+  const handleCloseTaskSidebar = () => {
+    setTaskSidebar(false);
+    setSelectedTask(null);
+  };
 
   return (
     <div className="h-full w-full card-outline p-5">
@@ -34,10 +47,16 @@ export default function MilestoneTaskContainer({ title }) {
               type={milestoneTask.task_type}
               date={milestoneTask.booking_date}
               vendor={milestoneTask.vendor_name}
+              onSelect={() => handleSelectTasks(milestoneTask)}
             />
           ))}
         </div>
       )}
+      <TaskSidebar
+        taskSidebar={taskSidebar}
+        onClose={handleCloseTaskSidebar}
+        selectedTask={selectedTask}
+      />
     </div>
   );
 }

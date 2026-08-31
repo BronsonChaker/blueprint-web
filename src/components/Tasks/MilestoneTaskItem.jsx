@@ -4,9 +4,13 @@ export default function MilestoneTaskItem({
   name,
   vendor,
   date,
+  onSelect,
 }) {
   return (
-    <div className="column gap-1 p-2 border-2 border-blue-400 hc-milestone rounded-md text-gray-700 bg-blue-200">
+    <div
+      onClick={onSelect}
+      className="column gap-1 p-2 border-2 border-blue-400 hc-milestone rounded-md text-gray-700 bg-blue-200"
+    >
       <span className="font-semibold text-sm">
         {projectNumber + " - " + projectAddress}
       </span>

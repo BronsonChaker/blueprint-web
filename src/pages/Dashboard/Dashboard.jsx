@@ -3,7 +3,7 @@ import DashboardShortcuts from "../../components/Dashboard/DashboardShortcuts";
 
 export default function Dashboard() {
   return (
-    <div className="px-10 py-5 min-h-screen">
+    <div className="px-10 py-5 h-full">
       <title>Dashboard</title>
       <div className=" w-full">
         <h1 className="text-heading">Dashboard</h1>
