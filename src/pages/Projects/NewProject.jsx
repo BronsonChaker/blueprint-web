@@ -3,14 +3,17 @@ import { useState } from "react";
 import SupervisorSelect from "../../components/SupervisorSelect.jsx";
 
 export default function NewProject() {
-  const [form, setForm] = useState({
+  const projectValues = {
     organisation: "",
-    job_number: "",
     supervisor: "",
+    job_number: "",
     template: "",
     name: "",
     address: "",
-    client_name: "",
+    status: "",
+    stage: "",
+    client_first_name: "",
+    client_last_name: "",
     client_email: "",
     client_phone: "",
     client_billing: "",
@@ -19,9 +22,19 @@ export default function NewProject() {
     contract_price: "",
     construction_start_date: "",
     construction_end_date: "",
-  });
+  };
+  const [values, setValues] = useState(projectValues);
 
-  console.log(form);
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setValues({
+      ...values,
+      [name]: value,
+    });
+  };
+
+  console.log(values);
+
   return (
     <main className="px-10 mt-5 h-screen w-full flex flex-col overflow-scroll">
       <title>New Project</title>
@@ -45,7 +58,7 @@ export default function NewProject() {
           </p>
         </div>
 
-        <form action="" className=" flex flex-col col-span-3 gap-5 text-xs">
+        <form action="" className=" flex flex-col col-span-4 gap-5 text-xs">
           {/* Project Information */}
           <div className="bg-stone-50 shadow-xs border border-stone-200 p-6">
             <h1 className="text-primary font-semibold text-lg mb-2">
@@ -60,13 +73,10 @@ export default function NewProject() {
                   type="text"
                   placeholder="000000"
                   className="text-xs px-2 py-2 border border-stone-300 rounded-md"
-                  onChange={(e) => {
-                    setForm({
-                      ...form,
-                      job_number: e.target.value,
-                    });
-                  }}
-                  value={form.job_number}
+                  onChange={handleInputChange}
+                  value={values.job_number}
+                  name="job_number"
+                  label="job_number"
                 />
               </div>
 
@@ -78,13 +88,10 @@ export default function NewProject() {
                   type="text"
                   placeholder="Lot 123 Street Name, Suburb"
                   className="text-xs px-2 py-2 border border-stone-300 rounded-md"
-                  onChange={(e) => {
-                    setForm({
-                      ...form,
-                      name: e.target.value,
-                    });
-                  }}
-                  value={form.name}
+                  onChange={handleInputChange}
+                  value={values.name}
+                  name="name"
+                  label="name"
                 />
               </div>
 
@@ -96,13 +103,10 @@ export default function NewProject() {
                   type="text"
                   placeholder="Lot 123 Street Name, Suburb"
                   className="text-xs px-2 py-2 border border-stone-300 rounded-md leading-2"
-                  onChange={(e) => {
-                    setForm({
-                      ...form,
-                      address: e.target.value,
-                    });
-                  }}
-                  value={form.address}
+                  onChange={handleInputChange}
+                  value={values.address}
+                  name="address"
+                  label="address"
                 />
               </div>
 
@@ -111,13 +115,10 @@ export default function NewProject() {
                   Supervisor
                 </label>
                 <SupervisorSelect
-                  onChange={(e) => {
-                    setForm({
-                      ...form,
-                      supervisor: e.target.value,
-                    });
-                  }}
-                  value={form.supervisor}
+                  onChange={handleInputChange}
+                  value={values.supervisor}
+                  name="supervisor"
+                  label="supervisor"
                 />
               </div>
 
@@ -126,16 +127,11 @@ export default function NewProject() {
                   Project Template
                 </label>
                 <select
-                  name="selectedSupervsor"
-                  id="supervisorSelect"
                   className="text-xs px-1 py-2 border border-stone-300 rounded-md"
-                  onChange={(e) => {
-                    setForm({
-                      ...form,
-                      template: e.target.value,
-                    });
-                  }}
-                  value={form.template}
+                  onChange={handleInputChange}
+                  value={values.template}
+                  name="template"
+                  label="template"
                 >
                   <option value="">Template</option>
                   <option value="">240 Day Template</option>
@@ -161,6 +157,10 @@ export default function NewProject() {
                   type="First Name"
                   placeholder="First Name"
                   className="text-xs px-2 py-2 border border-stone-300 rounded-md"
+                  onChange={handleInputChange}
+                  value={values.client_first_name}
+                  name="client_first_name"
+                  label="client_first_name"
                 />
               </div>
 
@@ -172,6 +172,10 @@ export default function NewProject() {
                   type="text"
                   placeholder="Last Name"
                   className="text-xs px-2 py-2 border border-stone-300 rounded-md"
+                  onChange={handleInputChange}
+                  value={values.client_last_name}
+                  name="client_last_name"
+                  label="client_last_name"
                 />
               </div>
               <div className="flex flex-col col-span-1 gap-1.5">
@@ -182,13 +186,10 @@ export default function NewProject() {
                   type="email"
                   placeholder="email@email.com"
                   className="text-xs px-2 py-2 border border-stone-300 rounded-md"
-                  onChange={(e) => {
-                    setForm({
-                      ...form,
-                      client_email: e.target.value,
-                    });
-                  }}
-                  value={form.client_email}
+                  onChange={handleInputChange}
+                  value={values.client_email}
+                  name="client_email"
+                  label="client_email"
                 />
               </div>
 
@@ -199,14 +200,12 @@ export default function NewProject() {
                 <input
                   type="number"
                   placeholder="0400000000"
+                  max="9999999999"
                   className="text-xs px-2 py-2 border border-stone-300 rounded-md [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-                  onChange={(e) => {
-                    setForm({
-                      ...form,
-                      client_phone: e.target.value,
-                    });
-                  }}
-                  value={form.client_phone}
+                  onChange={handleInputChange}
+                  value={values.client_phone}
+                  name="client_phone"
+                  label="client_phone"
                 />
               </div>
               <div className="flex flex-col col-span-1 gap-1.5">
@@ -217,13 +216,10 @@ export default function NewProject() {
                   type="text"
                   placeholder="Lot 123 Street Name, Suburb"
                   className="text-xs px-2 py-2 border border-stone-300 rounded-md"
-                  onChange={(e) => {
-                    setForm({
-                      ...form,
-                      client_billing: e.target.value,
-                    });
-                  }}
-                  value={form.client_billing}
+                  onChange={handleInputChange}
+                  value={values.client_billing}
+                  name="client_billing"
+                  label="client_billing"
                 />
               </div>
             </div>
@@ -243,13 +239,10 @@ export default function NewProject() {
                   type="date"
                   placeholder="dd/mm/yyyy"
                   className="text-xs px-2 py-2 border border-stone-300 rounded-md"
-                  onChange={(e) => {
-                    setForm({
-                      ...form,
-                      contract_start_date: e.target.value,
-                    });
-                  }}
-                  value={form.contract_start_date}
+                  onChange={handleInputChange}
+                  value={values.contract_start_date}
+                  name="contract_start_date"
+                  label="contract_start_date"
                 />
               </div>
 
@@ -261,13 +254,10 @@ export default function NewProject() {
                   type="date"
                   placeholder="dd/mm/yyyy"
                   className="text-xs px-2 py-2 border border-stone-300 rounded-md"
-                  onChange={(e) => {
-                    setForm({
-                      ...form,
-                      contract_end_date: e.target.value,
-                    });
-                  }}
-                  value={form.contract_end_date}
+                  onChange={handleInputChange}
+                  value={values.contract_end_date}
+                  name="contract_end_date"
+                  label="contract_end_date"
                 />
               </div>
 
@@ -279,13 +269,10 @@ export default function NewProject() {
                   type="number"
                   placeholder="0.00"
                   className="text-xs px-2 py-2 border border-stone-300 rounded-md [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-                  onChange={(e) => {
-                    setForm({
-                      ...form,
-                      contract_price: e.target.value,
-                    });
-                  }}
-                  value={form.contract_price}
+                  onChange={handleInputChange}
+                  value={values.contract_price}
+                  name="contract_price"
+                  label="contract_price"
                 />
               </div>
             </div>
@@ -372,14 +359,14 @@ export default function NewProject() {
             >
               Discard
             </Link>
-            <button className="px-4 py-2 border border-stone-300 bg-primary text-white hover:opacity-85 hover:cursor-pointer hover:transition-200 rounded-lg">
+            <button
+              type="submit"
+              className="px-4 py-2 border border-stone-300 bg-primary text-white hover:opacity-85 hover:cursor-pointer hover:transition-200 rounded-lg"
+            >
               Create Project
             </button>
           </div>
         </form>
-        <div className="col-span-1">
-          <p>map</p>
-        </div>
       </div>
     </main>
   );
