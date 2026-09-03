@@ -317,7 +317,6 @@ export default function NewProject() {
                 </label>
                 <textarea
                   name="access_notes"
-                  type="text"
                   onChange={handleInputChange}
                   value={values.access_notes}
                   placeholder="Gate Code, WHS Instructions, Permitted Hours...."
