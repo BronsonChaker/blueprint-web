@@ -42,11 +42,10 @@ export default function NewProject() {
     e.preventDefault();
 
     const payload = Object.fromEntries(
-      Object.entries(values)
-        .filter(
-          ([key, val]) => !(["status", "stage"].includes(key) && val === ""),
-        )
-        .map(([key, val]) => [key, val === "" ? null : val]),
+      Object.entries(values).map(([key, val]) => [
+        key,
+        val === "" ? null : val,
+      ]),
     );
 
     try {
@@ -165,6 +164,45 @@ export default function NewProject() {
                   <option value="">300 Day Template</option>
                   <option value="">Default Template</option>
                   <option value="">No Template</option>
+                </select>
+              </div>
+
+              <div className="flex flex-col col-span-1 gap-1.5">
+                <label htmlFor="" className="text-xs">
+                  Project Status
+                </label>
+                <select
+                  className="text-xs px-1 py-2 border border-stone-300 rounded-md"
+                  onChange={handleInputChange}
+                  value={values.status}
+                  name="status"
+                  label="status"
+                >
+                  <option value="">Status</option>
+                  <option value="pending">Pending</option>
+                  <option value="active">Active</option>
+                  <option value="on_hold">On-Hold</option>
+                  <option value="finalising">Finalising</option>
+                  <option value="completed">Completed</option>
+                </select>
+              </div>
+
+              <div className="flex flex-col col-span-1 gap-1.5">
+                <label htmlFor="" className="text-xs">
+                  Stage
+                </label>
+                <select
+                  className="text-xs px-1 py-2 border border-stone-300 rounded-md"
+                  onChange={handleInputChange}
+                  value={values.stage}
+                  name="stage"
+                  label="stage"
+                >
+                  <option value="">Stage</option>
+                  <option value="sales">Sales</option>
+                  <option value="pre-construction">Pre-Construction</option>
+                  <option value="construction">Construction</option>
+                  <option value="maintenance">Maintenance</option>
                 </select>
               </div>
             </div>
