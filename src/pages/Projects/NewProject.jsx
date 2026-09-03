@@ -1,10 +1,14 @@
 import { Link } from "react-router";
 import { useState } from "react";
 import SupervisorSelect from "../../components/SupervisorSelect.jsx";
+import { ProjectAPI } from "../../api/ProjectAPI.js";
+import { useNavigate } from "react-router";
 
 export default function NewProject() {
+  const navigate = useNavigate();
+
   const projectValues = {
-    organisation: "",
+    organisation: "70f5d34e-7abc-426d-b8c5-611355471743",
     supervisor: "",
     job_number: "",
     template: "",
@@ -22,6 +26,7 @@ export default function NewProject() {
     contract_price: "",
     construction_start_date: "",
     construction_end_date: "",
+    access_notes: "",
   };
   const [values, setValues] = useState(projectValues);
 
@@ -31,6 +36,25 @@ export default function NewProject() {
       ...values,
       [name]: value,
     });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const payload = Object.fromEntries(
+      Object.entries(values)
+        .filter(
+          ([key, val]) => !(["status", "stage"].includes(key) && val === ""),
+        )
+        .map(([key, val]) => [key, val === "" ? null : val]),
+    );
+
+    try {
+      ProjectAPI.createProject(payload);
+      navigate("/projects");
+    } catch (err) {
+      console.error("Validation error :", err.response?.data);
+    }
   };
 
   console.log(values);
@@ -58,7 +82,10 @@ export default function NewProject() {
           </p>
         </div>
 
-        <form action="" className=" flex flex-col col-span-4 gap-5 text-xs">
+        <form
+          onSubmit={handleSubmit}
+          className=" flex flex-col col-span-4 gap-5 text-xs"
+        >
           {/* Project Information */}
           <div className="bg-stone-50 shadow-xs border border-stone-200 p-6">
             <h1 className="text-primary font-semibold text-lg mb-2">
@@ -289,7 +316,10 @@ export default function NewProject() {
                   Project Access Note
                 </label>
                 <textarea
+                  name="access_notes"
                   type="text"
+                  onChange={handleInputChange}
+                  value={values.access_notes}
                   placeholder="Gate Code, WHS Instructions, Permitted Hours...."
                   className="text-xs px-2 py-2 border border-stone-300 rounded-md"
                   rows="4"

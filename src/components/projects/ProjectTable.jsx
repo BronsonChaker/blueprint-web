@@ -70,7 +70,7 @@ export default function ProjectTable({ jobCountData, query }) {
                 address={job.address}
                 status={job.status}
                 stage={job.stage}
-                supervisor={`${job.first_name} ${job.last_name}`}
+                supervisor={`${job.supervisor_first_name} ${job.supervisor_last_name}`}
                 onSelect={() => handleSelectJob(job.id)}
               />
             ))}

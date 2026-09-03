@@ -11,6 +11,7 @@ export const OrganisationAPI = {
             .signal
         : undefined,
     });
+    console.log(response.data);
     return response.data;
   },
 };

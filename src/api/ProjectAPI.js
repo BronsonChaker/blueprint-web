@@ -25,6 +25,19 @@ export const ProjectAPI = {
 
     return response.data;
   },
+
+  createProject: async function (data, cancel = false) {
+    const response = await api.request({
+      url: `/jobs/create`,
+      method: "POST",
+      data,
+      signal: cancel
+        ? cancelApiObject[this.createProject.name].handleRequestCancellation()
+            .signal
+        : undefined,
+    });
+    return response.data;
+  },
 };
 
 const cancelApiObject = defineCancelApiObject(ProjectAPI);
