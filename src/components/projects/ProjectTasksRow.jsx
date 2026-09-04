@@ -5,17 +5,34 @@ export default function ProjectTasksRow({
   completedDate,
   duration,
   onSelect,
+  jobAddress,
 }) {
   return (
     <tr
       onClick={onSelect}
-      className={`${completedDate ? 'completed-task' : 'incomplete-task'}`}
+      className={`${completedDate ? "completed-task" : "incomplete-task"}`}
     >
-      <td scope="col" className="p-5">{taskName}</td>
-      <td scope="col" className="p-5">{vendor}</td>
-      <td scope="col"  className="p-5">{scheduledDate}</td>
-      <td scope="col" className="p-5">{completedDate}</td>
-      <td scope="col" className="p-5">{duration}</td>
+      {jobAddress ? (
+        <td scope="col" className="p-5">
+          {jobAddress}
+        </td>
+      ) : null}
+
+      <td scope="col" className="p-5">
+        {taskName}
+      </td>
+      <td scope="col" className="p-5">
+        {vendor}
+      </td>
+      <td scope="col" className="p-5">
+        {scheduledDate}
+      </td>
+      <td scope="col" className="p-5">
+        {completedDate}
+      </td>
+      <td scope="col" className="p-5">
+        {duration}
+      </td>
     </tr>
   );
 }
