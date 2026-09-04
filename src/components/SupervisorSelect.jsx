@@ -25,7 +25,7 @@ export default function SupervisorSelect({ onChange }) {
         <select
           name="supervisor"
           id="supervisor"
-          className="flex pl-2 justify-center border-2 text-xs border-border rounded-xl outline-none py-2 hover:cursor-not-allowed"
+          className="flex pl-2 justify-center border-2 text-xs border-border rounded-xl outline-none py-2 hover:cursor-not-allowed bg-white"
           disabled
           onChange={handleChange}
         >
@@ -35,7 +35,7 @@ export default function SupervisorSelect({ onChange }) {
         <select
           name="supervisor"
           id="supervisor"
-          className="flex pl-2 justify-center border-2 text-xs border-border rounded-xl outline-none py-2"
+          className="flex pl-2 justify-center border-2 text-xs border-border rounded-xl outline-none py-2 bg-white"
           onChange={handleChange}
         >
           <option value="">Supervisor</option>

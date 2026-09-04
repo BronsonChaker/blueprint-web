@@ -3,6 +3,7 @@ import { useState } from "react";
 import SupervisorSelect from "../../components/SupervisorSelect.jsx";
 import { ProjectAPI } from "../../api/ProjectAPI.js";
 import { useNavigate } from "react-router";
+import LabelInputField from "../../components/UI/Input/LabelInputField.jsx";
 
 export default function NewProject() {
   const navigate = useNavigate();
@@ -86,53 +87,38 @@ export default function NewProject() {
           className=" flex flex-col col-span-4 gap-5 text-xs"
         >
           {/* Project Information */}
-          <div className="bg-stone-50 shadow-xs border border-stone-200 p-6">
+          <div className="card-outline p-5">
             <h1 className="text-primary font-semibold text-lg mb-2">
               Project Information
             </h1>
             <div className="w-full grid grid-cols-2 gap-2">
               <div className="flex flex-col col-span-1 gap-1.5">
-                <label htmlFor="" className="text-xs">
-                  Project Number
-                </label>
-                <input
-                  type="text"
-                  placeholder="000000"
-                  className="text-xs px-2 py-2 border border-stone-300 rounded-md"
-                  onChange={handleInputChange}
-                  value={values.job_number}
+                <LabelInputField
+                  label="Project Number"
                   name="job_number"
-                  label="job_number"
+                  onChange={handleInputChange}
+                  placeholder="000000"
+                  isRequired={true}
                 />
               </div>
 
               <div className="flex flex-col col-span-1 gap-1.5">
-                <label htmlFor="" className="text-xs">
-                  Project Name
-                </label>
-                <input
-                  type="text"
-                  placeholder="Lot 123 Street Name, Suburb"
-                  className="text-xs px-2 py-2 border border-stone-300 rounded-md"
-                  onChange={handleInputChange}
-                  value={values.name}
+                <LabelInputField
+                  label="Project Name"
                   name="name"
-                  label="name"
+                  onChange={handleInputChange}
+                  placeholder="Lot 132 Ronald"
+                  isRequired={true}
                 />
               </div>
 
               <div className="col-span-2 flex flex-col gap-1.5">
-                <label htmlFor="" className="text-xs">
-                  Project Address
-                </label>
-                <input
-                  type="text"
-                  placeholder="Lot 123 Street Name, Suburb"
-                  className="text-xs px-2 py-2 border border-stone-300 rounded-md leading-2"
-                  onChange={handleInputChange}
-                  value={values.address}
+                <LabelInputField
+                  label="Project Address"
                   name="address"
-                  label="address"
+                  onChange={handleInputChange}
+                  placeholder="Lot 132 (14) Ronald Street, NSW, 2713"
+                  isRequired={true}
                 />
               </div>
 
@@ -145,6 +131,7 @@ export default function NewProject() {
                   value={values.supervisor}
                   name="supervisor"
                   label="supervisor"
+                  isRequired={true}
                 />
               </div>
 
@@ -153,7 +140,7 @@ export default function NewProject() {
                   Project Template
                 </label>
                 <select
-                  className="text-xs px-1 py-2 border border-stone-300 rounded-md"
+                  className="form-label-input"
                   onChange={handleInputChange}
                   value={values.template}
                   name="template"
@@ -172,7 +159,7 @@ export default function NewProject() {
                   Project Status
                 </label>
                 <select
-                  className="text-xs px-1 py-2 border border-stone-300 rounded-md"
+                  className="form-label-input"
                   onChange={handleInputChange}
                   value={values.status}
                   name="status"
@@ -192,7 +179,7 @@ export default function NewProject() {
                   Stage
                 </label>
                 <select
-                  className="text-xs px-1 py-2 border border-stone-300 rounded-md"
+                  className="form-label-input"
                   onChange={handleInputChange}
                   value={values.stage}
                   name="stage"
@@ -209,142 +196,107 @@ export default function NewProject() {
           </div>
 
           {/* Customer Information */}
-          <div className="bg-stone-50 shadow-xs border border-stone-200 p-5">
+          <div className="card-outline p-5">
             <h1 className="text-primary font-semibold text-xl">
               Customer Information
             </h1>
             <div className="w-full grid grid-cols-2 gap-2">
               <div className="flex flex-col col-span-1 gap-1.5">
-                <label htmlFor="" className="text-xs">
-                  First Name
-                </label>
-                <input
-                  type="First Name"
-                  placeholder="First Name"
-                  className="text-xs px-2 py-2 border border-stone-300 rounded-md"
-                  onChange={handleInputChange}
-                  value={values.client_first_name}
+                <LabelInputField
+                  label="First Name"
                   name="client_first_name"
-                  label="client_first_name"
+                  onChange={handleInputChange}
+                  placeholder="John"
+                  type="text"
+                  isRequired={true}
                 />
               </div>
 
               <div className="flex flex-col col-span-1 gap-1.5">
-                <label htmlFor="" className="text-xs">
-                  Last Name
-                </label>
-                <input
-                  type="text"
-                  placeholder="Last Name"
-                  className="text-xs px-2 py-2 border border-stone-300 rounded-md"
-                  onChange={handleInputChange}
-                  value={values.client_last_name}
+                <LabelInputField
+                  label="Last Name"
                   name="client_last_name"
-                  label="client_last_name"
+                  onChange={handleInputChange}
+                  placeholder="Smith"
+                  type="text"
+                  isRequired={true}
                 />
               </div>
               <div className="flex flex-col col-span-1 gap-1.5">
-                <label htmlFor="" className="text-xs">
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  placeholder="email@email.com"
-                  className="text-xs px-2 py-2 border border-stone-300 rounded-md"
-                  onChange={handleInputChange}
-                  value={values.client_email}
+                <LabelInputField
+                  label="Email Address"
                   name="client_email"
-                  label="client_email"
+                  onChange={handleInputChange}
+                  placeholder="johnsmith@email.com"
+                  type="email"
+                  isRequired={true}
                 />
               </div>
 
               <div className="flex flex-col col-span-1 gap-1.5">
-                <label htmlFor="" className="text-xs">
-                  Phone Number
-                </label>
-                <input
-                  type="number"
-                  placeholder="0400000000"
-                  max="9999999999"
-                  className="text-xs px-2 py-2 border border-stone-300 rounded-md [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-                  onChange={handleInputChange}
-                  value={values.client_phone}
+                <LabelInputField
+                  label="Phone Number"
                   name="client_phone"
-                  label="client_phone"
+                  onChange={handleInputChange}
+                  placeholder="0412345678"
+                  type="text"
                 />
               </div>
               <div className="flex flex-col col-span-1 gap-1.5">
-                <label htmlFor="" className="text-xs">
-                  Billing Address
-                </label>
-                <input
-                  type="text"
-                  placeholder="Lot 123 Street Name, Suburb"
-                  className="text-xs px-2 py-2 border border-stone-300 rounded-md"
-                  onChange={handleInputChange}
-                  value={values.client_billing}
+                <LabelInputField
+                  label="Billing Address"
                   name="client_billing"
-                  label="client_billing"
+                  onChange={handleInputChange}
+                  placeholder="Lot 123 Street Name, Suburb"
+                  type="text"
+                  isRequired={true}
                 />
               </div>
             </div>
           </div>
 
           {/* Contract Details */}
-          <div className="bg-stone-50 shadow-xs border border-stone-200 p-5">
+          <div className="card-outline p-5">
             <h1 className="text-primary font-semibold text-xl">
               Contract Details
             </h1>
             <div className="w-full grid grid-cols-3 gap-2">
               <div className="flex flex-col col-span-1 gap-1.5">
-                <label htmlFor="" className="text-xs">
-                  Contract Start Date
-                </label>
-                <input
-                  type="date"
-                  placeholder="dd/mm/yyyy"
-                  className="text-xs px-2 py-2 border border-stone-300 rounded-md"
-                  onChange={handleInputChange}
-                  value={values.contract_start_date}
+                <LabelInputField
+                  label="Contract Start Date"
                   name="contract_start_date"
-                  label="contract_start_date"
-                />
-              </div>
-
-              <div className="flex flex-col col-span-1 gap-1.5">
-                <label htmlFor="" className="text-xs">
-                  Contract End Date
-                </label>
-                <input
-                  type="date"
+                  onChange={handleInputChange}
                   placeholder="dd/mm/yyyy"
-                  className="text-xs px-2 py-2 border border-stone-300 rounded-md"
-                  onChange={handleInputChange}
-                  value={values.contract_end_date}
-                  name="contract_end_date"
-                  label="contract_end_date"
+                  type="date"
+                  isRequired={true}
                 />
               </div>
 
               <div className="flex flex-col col-span-1 gap-1.5">
-                <label htmlFor="" className="text-xs">
-                  Contract Price ($)
-                </label>
-                <input
-                  type="number"
-                  placeholder="0.00"
-                  className="text-xs px-2 py-2 border border-stone-300 rounded-md [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                <LabelInputField
+                  label="Contract End Date"
+                  name="contract_end_date"
                   onChange={handleInputChange}
-                  value={values.contract_price}
+                  placeholder="dd/mm/yyyy"
+                  type="date"
+                  isRequired={true}
+                />
+              </div>
+
+              <div className="flex flex-col col-span-1 gap-1.5">
+                <LabelInputField
+                  label="Contract Price"
                   name="contract_price"
-                  label="contract_price"
+                  onChange={handleInputChange}
+                  placeholder="00.00"
+                  type="number"
                 />
               </div>
             </div>
           </div>
 
           {/* Site Logistics */}
-          <div className="bg-stone-50 shadow-xs border border-stone-200 p-5">
+          <div className="card-outline p-5">
             <h1 className="text-primary font-semibold text-xl">
               Site Logistics
             </h1>
@@ -358,7 +310,7 @@ export default function NewProject() {
                   onChange={handleInputChange}
                   value={values.access_notes}
                   placeholder="Gate Code, WHS Instructions, Permitted Hours...."
-                  className="text-xs px-2 py-2 border border-stone-300 rounded-md"
+                  className="form-label-input"
                   rows="4"
                 />
               </div>
