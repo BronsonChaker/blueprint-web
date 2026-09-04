@@ -39,7 +39,7 @@ export default function UserDropdown({ expandState }) {
           </div>
 
           <div
-            className={`w-45.5 absolute left-7 bottom-18 mt-3 rounded-sm border-2 border-stone-100 bg-white
+            className={`w-55 absolute left-7 bottom-18 mt-3 rounded-sm border-2 border-stone-100 bg-white
                     transition-all duration-200 ease-in-out
                     ${isOpen ? "opacity-100 scale-100 translate-y-0 pointer-events-auto" : "opacity-0 scale-95 -translate-y-1 pointer-events-none"}`}
           >
